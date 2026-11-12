@@ -1,7 +1,7 @@
 import manifest from '../../avatar/neoPixelManifest.json';
 
 export const DEMO_EMAIL = 'demo.local@habalyze.app';
-export const SEED_VERSION = 2;
+export const SEED_VERSION = 3;
 
 const day = (offset) => {
   const date = new Date();
@@ -69,8 +69,8 @@ function ownedFromPreset(presetId) {
     value.startsWith('hair_') || value.startsWith('top_') || value.startsWith('shorts_')
     || value.startsWith('pants_') || value.startsWith('skirt_') || value.startsWith('shoes_')
     || value.startsWith('hat_') || value.startsWith('pet_') || value.startsWith('prop_')
-    || value.startsWith('horns_') || value.startsWith('antenna_') || value.startsWith('wings_')
-    || value.startsWith('cape_') || value.startsWith('bag_')
+    || value.startsWith('horns_') || value.startsWith('antenna_') || value.startsWith('glasses_')
+    || value.startsWith('cape_') || value.startsWith('bag_') || value.startsWith('jeans')
   ));
 }
 

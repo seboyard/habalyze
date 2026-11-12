@@ -9,6 +9,18 @@ const itemIndex = new Map();
 });
 const bodyIndex = new Map(manifest.bodies.map((body) => [body.id, body]));
 
+export function assetSrc(item, rigId) {
+  if (!item) return null;
+  if (item.srcByRig) return item.srcByRig[rigId] || null;
+  return item.src || null;
+}
+
+export function fitsRig(item, rigId) {
+  if (!item) return false;
+  if (item.rigs && rigId && !item.rigs.includes(rigId)) return false;
+  return Boolean(assetSrc(item, rigId));
+}
+
 export function resolveAvatarConfig(config = {}) {
   const preset = manifest.presets[config.preset] || manifest.presets.lumo;
   const base = {
@@ -20,6 +32,7 @@ export function resolveAvatarConfig(config = {}) {
     hair: preset.hair || null,
     horns: preset.horns || null,
     headwear: preset.headwear || null,
+    glasses: preset.glasses || null,
     upper: preset.upper || null,
     lower: preset.lower || null,
     shoes: preset.shoes || null,
@@ -34,13 +47,14 @@ export function resolveAvatarConfig(config = {}) {
   if (!bodyIndex.has(merged.body)) merged.body = base.body;
   if (merged.expression === 'happy') merged.expression = 'alegre';
   if (merged.expression === 'sad' || merged.expression === 'tired') merged.expression = 'cansada';
-  if (!manifest.expressions.some((item) => item.id === merged.expression)) merged.expression = 'alegre';
+  const expression = manifest.expressions.find((item) => item.id === merged.expression);
+  if (!expression || (expression.rigs && !expression.rigs.includes(merged.rig))) merged.expression = 'alegre';
   return merged;
 }
 
-function place(item, anchors) {
+function place(item) {
   if (item.fullCanvas) return { left: 0, top: 0, width: 96, height: 128 };
-  const point = anchors[item.anchor] || anchors.torso || [48, 64];
+  const point = item.point || [48, 116];
   const left = point[0] - item.w / 2;
   const top = item.origin === 'bottom'
     ? point[1] - item.h
@@ -68,19 +82,30 @@ export default function NeoPixelAvatar({
   const scene = manifest.scenes.find((item) => item.id === (sceneId || (framed ? config.scene : null)));
 
   const layers = [];
-  if (config.aura && itemIndex.get(config.aura)) layers.push(itemIndex.get(config.aura));
-  if (config.backpack && itemIndex.get(config.backpack)) layers.push(itemIndex.get(config.backpack));
+  const push = (item, extra = {}) => {
+    if (!item || !fitsRig(item, config.rig)) return;
+    const src = assetSrc(item, config.rig);
+    if (!src) return;
+    const point = item.anchor ? (rig.anchors[item.anchor] || rig.anchors.companion) : null;
+    layers.push({ ...item, ...extra, src, point });
+  };
+
+  const shadow = manifest.shadows?.[config.rig];
+  if (shadow) layers.push({ ...shadow, id: `shadow-${config.rig}`, src: shadow.src, fullCanvas: true, z: -35 });
+  push(itemIndex.get(config.aura));
+  push(itemIndex.get(config.backpack));
   const body = bodyIndex.get(config.body);
-  if (body) layers.push({ ...body, fullCanvas: true, z: -10 });
-  if (config.rig === 'humanoid_seated' && manifest.mobility) layers.push(manifest.mobility);
+  if (body) layers.push({ ...body, fullCanvas: true, z: body.z ?? -10 });
+  if (config.rig === 'humanoid_seated' && manifest.mobility) {
+    layers.push({ ...manifest.mobility, fullCanvas: true });
+  }
   ['lower', 'shoes', 'upper', 'expression', 'horns', 'hair', 'headwear', 'glasses', 'hand', 'pet'].forEach((key) => {
     const id = key === 'expression' ? config.expression : config[key];
-    const item = id && itemIndex.get(id);
-    if (item) layers.push(item);
+    push(itemIndex.get(id));
   });
   layers.sort((a, b) => (a.z || 0) - (b.z || 0));
 
-  const motion = animation === 'none' ? '' : `npc-${animation === 'jump' ? 'jump' : animation === 'bounce' ? 'jump' : 'idle'}`;
+  const motion = animation === 'none' ? '' : `npc-${animation === 'jump' || animation === 'bounce' ? 'jump' : 'idle'}`;
 
   return (
     <div className="npc-wrap" style={{ width: framed ? Math.max(width + 28, 180) : width }}>
@@ -91,7 +116,7 @@ export default function NeoPixelAvatar({
         {scene && <img src={scene.srcSmall || scene.src} alt="" className="npc-scene" />}
         <div className="npc-canvas" style={{ width: 96, height: 128, transform: `scale(${width / 96})` }}>
           {layers.map((layer) => {
-            const box = place(layer, rig.anchors);
+            const box = place(layer);
             return (
               <img
                 key={`${layer.id || layer.src}-${layer.z}`}

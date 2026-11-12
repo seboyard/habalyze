@@ -941,12 +941,12 @@ export default function Dashboard() {
               </p>
               <div className="flex items-center gap-2 md:gap-3 mt-1">
                 <div className="flex items-center gap-1">
-                  <span className="text-lg">💰</span>
+                  <img src="/assets/neo_pixel_cozy/v1/ui/badges/monedas_32x32.png" alt="" width="22" height="22" style={{ imageRendering: 'pixelated' }} />
                   <span className="font-bold text-amber-600">{user?.coins || 0}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <span className="text-lg">💎</span>
-                  <span className="font-bold text-violet-600">{user?.gems || 0}</span>
+                  <img src="/assets/neo_pixel_cozy/v1/ui/badges/xp_32x32.png" alt="" width="22" height="22" style={{ imageRendering: 'pixelated' }} />
+                  <span className="font-bold text-violet-600">{user?.experience || 0} xp</span>
                 </div>
               </div>
             </div>

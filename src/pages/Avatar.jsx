@@ -4,7 +4,7 @@ import { db } from '@/api/base44Client';
 import { Button } from '@/components/ui/button';
 import { createPageUrl } from '@/utils';
 import { toast } from 'sonner';
-import NeoPixelAvatar, { neoManifest, resolveAvatarConfig } from '@/components/avatar/NeoPixelAvatar';
+import NeoPixelAvatar, { assetSrc, fitsRig, neoManifest, resolveAvatarConfig } from '@/components/avatar/NeoPixelAvatar';
 
 const GROUPS = [
   { id: 'preset', label: 'Personajes' },
@@ -12,6 +12,7 @@ const GROUPS = [
   { id: 'hair', label: 'Pelo' },
   { id: 'horns', label: 'Cuernos' },
   { id: 'headwear', label: 'Sombrero' },
+  { id: 'glasses', label: 'Gafas' },
   { id: 'upper', label: 'Arriba' },
   { id: 'lower', label: 'Abajo' },
   { id: 'shoes', label: 'Pies' },
@@ -27,6 +28,7 @@ const SLOT_OF = {
   hair: 'hair_front',
   horns: 'horns_antennae',
   headwear: 'headwear',
+  glasses: 'glasses',
   upper: 'upper_clothing',
   lower: 'lower_clothing',
   shoes: 'shoes',
@@ -56,13 +58,13 @@ export default function AvatarPage() {
 
   const options = useMemo(() => {
     if (group === 'preset') return Object.values(neoManifest.presets);
-    if (group === 'expression') return neoManifest.expressions;
+    if (group === 'expression') return neoManifest.expressions.filter((item) => fitsRig(item, config?.rig));
     if (group === 'scene') return neoManifest.scenes;
     if (group === 'body') return neoManifest.bodies;
-    if (group === 'aura') return neoManifest.auras;
+    if (group === 'aura') return neoManifest.auras.filter((item) => fitsRig(item, config?.rig));
     const slot = SLOT_OF[group];
-    return neoManifest.items.filter((item) => item.slot === slot);
-  }, [group]);
+    return neoManifest.items.filter((item) => item.slot === slot && fitsRig(item, config?.rig));
+  }, [group, config?.rig]);
 
   const choose = (option) => {
     if (group === 'preset') {
@@ -70,7 +72,12 @@ export default function AvatarPage() {
       return;
     }
     if (group === 'body') {
-      setConfig((current) => ({ ...current, body: option.id, rig: option.rig, preset: null }));
+      setConfig((current) => {
+        const next = { ...current, body: option.id, rig: option.rig, preset: null };
+        const expression = neoManifest.expressions.find((item) => item.id === current.expression);
+        if (expression && !fitsRig(expression, option.rig)) next.expression = 'alegre';
+        return next;
+      });
       return;
     }
     if (group === 'scene') {
@@ -122,6 +129,14 @@ export default function AvatarPage() {
         </div>
         <div className="dresser-actions">
           <Button variant="outline" onClick={() => navigate(createPageUrl('Shop'))}>Ir a la tienda</Button>
+          <Button variant="outline" onClick={async () => {
+            await db.auth.updateMe({ avatar_config: { ...(user?.avatar_config || {}), engine: 'legacy' } });
+            toast.success('Listo: vuelve el avatar dibujado anterior');
+            navigate(createPageUrl('Dashboard'));
+          }}
+          >
+            Avatar anterior
+          </Button>
           <Button onClick={save} disabled={saving}>{saving ? 'Guardando…' : 'Guardar'}</Button>
         </div>
       </header>
@@ -164,8 +179,8 @@ export default function AvatarPage() {
                 className={selectedId() === option.id ? 'is-on' : ''}
                 onClick={() => choose(option)}
               >
-                {option.src && group !== 'preset' ? (
-                  <img src={option.src} alt="" className={group === 'scene' ? 'swatch-scene' : 'swatch'} />
+                {assetSrc(option, config.rig) && group !== 'preset' ? (
+                  <img src={group === 'scene' ? (option.srcSmall || option.src) : assetSrc(option, config.rig)} alt="" className={group === 'scene' ? 'swatch-scene' : 'swatch'} />
                 ) : (
                   <span className="swatch swatch-empty">{option.name.slice(0, 1)}</span>
                 )}

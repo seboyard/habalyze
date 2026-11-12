@@ -337,7 +337,7 @@ export default {
     "tagline": "Construye los hábitos que construyen tu vida.",
     "hero": {
       "title": "Convierte tus hábitos en tu mayor fortaleza",
-      "subtitle": "Hábitos, caminos y un avatar pixel cozy. Entras en este navegador, sin cuenta externa.",
+      "subtitle": "Hábitos, metas y caminos con Brasa, Vek, Mora, Nix y Lumo. Neo Pixel Cozy, en este navegador.",
       "cta": "Entrar y probar"
     },
     "projects": {

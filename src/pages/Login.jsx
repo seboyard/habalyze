@@ -3,6 +3,19 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { db } from '@/api/base44Client';
 import { DEMO_EMAIL } from '@/api/local/seed';
 import { Button } from '@/components/ui/button';
+import NeoPixelAvatar from '@/components/avatar/NeoPixelAvatar';
+
+const CAST = ['brasa', 'vek', 'mora', 'nix', 'lumo'];
+
+function Cast() {
+  return (
+    <div className="login-cast" aria-hidden="true">
+      {CAST.map((preset) => (
+        <NeoPixelAvatar key={preset} user={{ avatar_config: { preset } }} size={72} showLevel={false} animation="idle" />
+      ))}
+    </div>
+  );
+}
 
 export default function Login() {
   const navigate = useNavigate();
@@ -87,6 +100,7 @@ export default function Login() {
     return (
       <div className="login-screen">
         <div className="login-card">
+          <Cast />
           <p className="pixel-label">Modo local</p>
           <h1>Entra a Habalyze</h1>
           <p className="login-copy">
@@ -108,9 +122,10 @@ export default function Login() {
   }
 
   return (
-    <div className="login-screen">
-      <div className="login-card">
-        <p className="pixel-label">Cuenta</p>
+      <div className="login-screen">
+        <div className="login-card">
+          <Cast />
+          <p className="pixel-label">Cuenta</p>
         <h1>{mode === 'register' ? 'Crear cuenta' : 'Entra a Habalyze'}</h1>
         <p className="login-copy">
           El correo y la contraseña los guarda Supabase Auth. La clave anónima del proyecto no es una contraseña de usuario.

@@ -20,6 +20,8 @@ export const shopCategories = [
   { id: 'pants', label: 'Abajo', icon: '👖' },
   { id: 'shoes', label: 'Calzado', icon: '👟' },
   { id: 'hat', label: 'Cabeza', icon: '🎩' },
+  { id: 'horns', label: 'Cuernos', icon: '🌙' },
+  { id: 'glasses', label: 'Gafas', icon: '👓' },
   { id: 'backpack', label: 'Espalda', icon: '🦋' },
   { id: 'hand', label: 'En la mano', icon: '📖' },
   { id: 'pet', label: 'Mascotas', icon: '🐾' },
@@ -30,6 +32,7 @@ export const shopCategories = [
 
 export const categoryFieldMap = {
   hat: { field: 'headwear', colorField: 'hatColor' },
+  horns: { field: 'horns', colorField: 'hornsColor' },
   hair: { field: 'hair', colorField: 'hairColor' },
   shirt: { field: 'upper', colorField: 'shirtColor' },
   pants: { field: 'lower', colorField: 'pantsColor' },
