@@ -1,0 +1,98 @@
+{
+  "name": "Guild",
+  "type": "object",
+  "properties": {
+    "guild_id": {
+      "type": "string",
+      "description": "ID \u00fanico del gremio"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nombre del gremio"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del gremio"
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "fitness",
+        "learning",
+        "creativity",
+        "mindfulness",
+        "productivity",
+        "health",
+        "social",
+        "finance",
+        "general"
+      ],
+      "description": "Tema o categor\u00eda del gremio"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji o icono del gremio"
+    },
+    "banner_color": {
+      "type": "string",
+      "description": "Color del banner"
+    },
+    "leader_email": {
+      "type": "string",
+      "description": "Email del l\u00edder del gremio"
+    },
+    "member_count": {
+      "type": "number",
+      "default": 1,
+      "description": "N\u00famero de miembros"
+    },
+    "max_members": {
+      "type": "number",
+      "default": 50,
+      "description": "M\u00e1ximo de miembros"
+    },
+    "total_xp": {
+      "type": "number",
+      "default": 0,
+      "description": "XP total del gremio"
+    },
+    "level": {
+      "type": "number",
+      "default": 1,
+      "description": "Nivel del gremio"
+    },
+    "weekly_goal": {
+      "type": "number",
+      "default": 1000,
+      "description": "Meta semanal de XP"
+    },
+    "weekly_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progreso semanal actual"
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si acepta solicitudes p\u00fablicas"
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "min_level": {
+          "type": "number",
+          "default": 1
+        },
+        "min_streak": {
+          "type": "number",
+          "default": 0
+        }
+      }
+    }
+  },
+  "required": [
+    "guild_id",
+    "name",
+    "leader_email"
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre del proyecto"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del proyecto y objetivo principal"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji del proyecto"
+    },
+    "color": {
+      "type": "string",
+      "enum": [
+        "purple",
+        "blue",
+        "green",
+        "orange",
+        "pink",
+        "red",
+        "teal",
+        "yellow"
+      ],
+      "default": "purple",
+      "description": "Color del proyecto"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "completed",
+        "paused",
+        "archived"
+      ],
+      "default": "active",
+      "description": "Estado del proyecto"
+    },
+    "target_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha objetivo de finalizaci\u00f3n"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "health",
+        "fitness",
+        "learning",
+        "career",
+        "creativity",
+        "finance",
+        "relationships",
+        "personal"
+      ],
+      "description": "Categor\u00eda del proyecto"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "default": "medium",
+      "description": "Dificultad estimada"
+    },
+    "progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progreso del proyecto (0-100)"
+    },
+    "ai_generated": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si las tareas fueron generadas por IA"
+    },
+    "advanced_mode": {
+      "type": "boolean",
+      "default": false,
+      "description": "Modo avanzado con filtros y asignaciones"
+    },
+    "created_by_name": {
+      "type": "string",
+      "description": "Nombre completo del creador del proyecto"
+    },
+    "linked_goal_id": {
+      "type": "string",
+      "description": "ID del objetivo vinculado a este proyecto"
+    },
+    "linked_habit_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs de h\u00e1bitos vinculados a este proyecto"
+    },
+    "is_milestone_for_goal": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si este proyecto es un hito de un objetivo"
+    },
+    "reward_coins": {
+      "type": "number",
+      "default": 50,
+      "description": "Monedas al completar"
+    },
+    "reward_xp": {
+      "type": "number",
+      "default": 100,
+      "description": "XP al completar"
+    },
+    "weekly_tracking_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si el proyecto usa seguimiento semanal"
+    },
+    "current_week_number": {
+      "type": "number",
+      "default": 1,
+      "description": "N\u00famero de la semana actual del proyecto (1-52)"
+    },
+    "total_weeks": {
+      "type": "number",
+      "description": "Total de semanas planificadas para el proyecto"
+    },
+    "weekly_completion_threshold": {
+      "type": "number",
+      "default": 80,
+      "description": "Porcentaje requerido para considerar una semana completada"
+    }
+  },
+  "required": [
+    "name",
+    "description"
+  ]
+}

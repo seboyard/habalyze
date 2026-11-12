@@ -1,0 +1,45 @@
+{
+  "name": "FriendRequest",
+  "type": "object",
+  "properties": {
+    "from_user_email": {
+      "type": "string",
+      "description": "Email del usuario que env\u00eda la solicitud"
+    },
+    "to_user_email": {
+      "type": "string",
+      "description": "Email del usuario que recibe la solicitud"
+    },
+    "from_user_name": {
+      "type": "string",
+      "description": "Nombre del usuario que env\u00eda"
+    },
+    "to_user_name": {
+      "type": "string",
+      "description": "Nombre del usuario que recibe"
+    },
+    "from_username": {
+      "type": "string",
+      "description": "Username del usuario que env\u00eda"
+    },
+    "to_username": {
+      "type": "string",
+      "description": "Username del usuario que recibe"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Estado de la solicitud"
+    }
+  },
+  "required": [
+    "from_user_email",
+    "to_user_email",
+    "status"
+  ]
+}

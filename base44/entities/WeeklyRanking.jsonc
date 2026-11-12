@@ -1,0 +1,37 @@
+{
+  "name": "WeeklyRanking",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario"
+    },
+    "week_start": {
+      "type": "string",
+      "format": "date",
+      "description": "Inicio de la semana (lunes)"
+    },
+    "xp_earned": {
+      "type": "number",
+      "default": 0,
+      "description": "XP ganado esta semana"
+    },
+    "habits_completed": {
+      "type": "number",
+      "default": 0,
+      "description": "H\u00e1bitos completados esta semana"
+    },
+    "rank_position": {
+      "type": "number",
+      "description": "Posici\u00f3n en el ranking"
+    },
+    "previous_rank": {
+      "type": "number",
+      "description": "Posici\u00f3n anterior"
+    }
+  },
+  "required": [
+    "user_email",
+    "week_start"
+  ]
+}

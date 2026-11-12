@@ -1,0 +1,37 @@
+{
+  "name": "BrandAsset",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre del asset"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "avatar",
+        "color",
+        "typography",
+        "post_template",
+        "canva_prompt"
+      ],
+      "description": "Categor\u00eda del asset"
+    },
+    "config": {
+      "type": "object",
+      "description": "Configuraci\u00f3n JSON del asset (avatar config, prompt params, etc.)"
+    },
+    "preview_description": {
+      "type": "string",
+      "description": "Descripci\u00f3n textual del asset para uso en prompts"
+    },
+    "prompt_text": {
+      "type": "string",
+      "description": "Prompt generado listo para IA o Canva"
+    }
+  },
+  "required": [
+    "name",
+    "category"
+  ]
+}

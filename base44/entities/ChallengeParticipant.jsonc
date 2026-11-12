@@ -1,0 +1,33 @@
+{
+  "name": "ChallengeParticipant",
+  "type": "object",
+  "properties": {
+    "challenge_id": {
+      "type": "string",
+      "description": "ID del desaf\u00edo"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario participante"
+    },
+    "personal_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progreso personal del usuario"
+    },
+    "has_claimed_reward": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si ya reclam\u00f3 la recompensa"
+    },
+    "joined_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha en que se uni\u00f3 al desaf\u00edo"
+    }
+  },
+  "required": [
+    "challenge_id",
+    "user_email"
+  ]
+}

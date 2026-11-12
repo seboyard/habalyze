@@ -1,0 +1,56 @@
+{
+  "name": "Invitation",
+  "type": "object",
+  "properties": {
+    "referrer_email": {
+      "type": "string",
+      "description": "Email del usuario que invita"
+    },
+    "referrer_name": {
+      "type": "string",
+      "description": "Nombre del usuario que invita"
+    },
+    "invited_email": {
+      "type": "string",
+      "description": "Email del usuario invitado (si se proporcion\u00f3)"
+    },
+    "invitation_code": {
+      "type": "string",
+      "description": "C\u00f3digo \u00fanico de invitaci\u00f3n"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "accepted",
+        "expired"
+      ],
+      "default": "pending",
+      "description": "Estado de la invitaci\u00f3n"
+    },
+    "accepted_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha en que se acept\u00f3 la invitaci\u00f3n"
+    },
+    "reward_given": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si ya se dio la recompensa"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "link",
+        "email",
+        "whatsapp",
+        "telegram"
+      ],
+      "description": "M\u00e9todo de invitaci\u00f3n usado"
+    }
+  },
+  "required": [
+    "referrer_email",
+    "invitation_code"
+  ]
+}

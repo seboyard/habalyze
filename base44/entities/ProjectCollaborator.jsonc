@@ -1,0 +1,50 @@
+{
+  "name": "ProjectCollaborator",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "description": "ID del proyecto"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email del colaborador"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Nombre del colaborador"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "owner",
+        "collaborator",
+        "viewer"
+      ],
+      "default": "collaborator",
+      "description": "Rol en el proyecto"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Estado de la invitaci\u00f3n"
+    },
+    "invited_by": {
+      "type": "string",
+      "description": "Email de quien invit\u00f3"
+    },
+    "joined_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "project_id",
+    "user_email"
+  ]
+}

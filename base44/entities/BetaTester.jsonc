@@ -1,0 +1,163 @@
+{
+  "name": "BetaTester",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre completo del tester simulado"
+    },
+    "age": {
+      "type": "number",
+      "description": "Edad"
+    },
+    "occupation": {
+      "type": "string",
+      "description": "Ocupaci\u00f3n / estilo de vida"
+    },
+    "location": {
+      "type": "string",
+      "description": "Ciudad / pa\u00eds"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "iOS Safari",
+        "iOS Chrome",
+        "Android Chrome",
+        "Android Samsung Browser",
+        "Desktop Chrome",
+        "Desktop Firefox",
+        "Desktop Safari",
+        "Desktop Edge"
+      ],
+      "description": "Plataforma de uso"
+    },
+    "tech_level": {
+      "type": "string",
+      "enum": [
+        "bajo",
+        "medio",
+        "alto"
+      ],
+      "description": "Nivel tecnol\u00f3gico"
+    },
+    "goals_in_app": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Objetivos que busca con Habalyze"
+    },
+    "session_start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de inicio de la sesi\u00f3n de prueba"
+    },
+    "days_using_app": {
+      "type": "number",
+      "description": "D\u00edas de uso simulado"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "activo",
+        "inactivo",
+        "abandon\u00f3",
+        "muy_activo"
+      ],
+      "description": "Estado del tester"
+    },
+    "overall_rating": {
+      "type": "number",
+      "description": "Calificaci\u00f3n general 1-10"
+    },
+    "general_feedback": {
+      "type": "string",
+      "description": "Feedback general narrativo"
+    },
+    "bugs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "cr\u00edtico",
+              "alto",
+              "medio",
+              "bajo"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "abierto",
+              "en_revisi\u00f3n",
+              "resuelto",
+              "no_reproducible"
+            ]
+          },
+          "screen": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Bugs reportados"
+    },
+    "feature_requests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Features que el tester quisiera ver"
+    },
+    "usability_scores": {
+      "type": "object",
+      "description": "Puntajes por \u00e1rea (1-10): onboarding, navigation, habits, stats, social, performance",
+      "properties": {
+        "onboarding": {
+          "type": "number"
+        },
+        "navigation": {
+          "type": "number"
+        },
+        "habits": {
+          "type": "number"
+        },
+        "stats": {
+          "type": "number"
+        },
+        "social": {
+          "type": "number"
+        },
+        "performance": {
+          "type": "number"
+        },
+        "design": {
+          "type": "number"
+        }
+      }
+    },
+    "whatsapp_connected": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si us\u00f3 la integraci\u00f3n de WhatsApp"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notas adicionales del admin"
+    }
+  },
+  "required": [
+    "name",
+    "platform",
+    "tech_level"
+  ]
+}

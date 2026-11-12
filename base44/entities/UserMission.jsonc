@@ -1,0 +1,38 @@
+{
+  "name": "UserMission",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario"
+    },
+    "mission_id": {
+      "type": "string",
+      "description": "ID de la misi\u00f3n"
+    },
+    "progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progreso actual"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si fue completada"
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de completado"
+    },
+    "has_claimed_reward": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si se reclam\u00f3 la recompensa"
+    }
+  },
+  "required": [
+    "user_email",
+    "mission_id"
+  ]
+}

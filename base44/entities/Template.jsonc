@@ -1,0 +1,164 @@
+{
+  "name": "Template",
+  "type": "object",
+  "properties": {
+    "template_id": {
+      "type": "string",
+      "description": "ID \u00fanico de la plantilla"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nombre de la plantilla"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n de la plantilla"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji de la plantilla"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "health",
+        "fitness",
+        "learning",
+        "career",
+        "creativity",
+        "finance",
+        "relationships",
+        "personal",
+        "productivity"
+      ],
+      "description": "Categor\u00eda de la plantilla"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "default": "beginner",
+      "description": "Nivel de dificultad"
+    },
+    "estimated_duration_days": {
+      "type": "number",
+      "description": "Duraci\u00f3n estimada en d\u00edas"
+    },
+    "habits_config": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "times_per_day": {
+            "type": "number"
+          },
+          "scheduled_times": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "description": "Configuraci\u00f3n de h\u00e1bitos incluidos"
+    },
+    "goals_config": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "target_type": {
+            "type": "string"
+          },
+          "target_value": {
+            "type": "number"
+          },
+          "milestones": {
+            "type": "array"
+          }
+        }
+      },
+      "description": "Configuraci\u00f3n de objetivos incluidos"
+    },
+    "projects_config": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "description": "Configuraci\u00f3n de proyectos incluidos"
+    },
+    "is_official": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si es una plantilla oficial de Habalyze"
+    },
+    "is_public": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si est\u00e1 disponible p\u00fablicamente"
+    },
+    "creator_email": {
+      "type": "string",
+      "description": "Email del creador (si es plantilla de usuario)"
+    },
+    "usage_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Veces que se ha usado"
+    },
+    "rating": {
+      "type": "number",
+      "default": 0,
+      "description": "Valoraci\u00f3n promedio (0-5)"
+    }
+  },
+  "required": [
+    "template_id",
+    "name",
+    "category"
+  ]
+}

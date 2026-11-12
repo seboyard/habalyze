@@ -1,0 +1,94 @@
+{
+  "name": "Achievement",
+  "type": "object",
+  "properties": {
+    "achievement_id": {
+      "type": "string",
+      "description": "ID \u00fanico del logro"
+    },
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo del logro"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del logro"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji del logro"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "habits",
+        "challenges",
+        "social",
+        "streak",
+        "special"
+      ],
+      "description": "Categor\u00eda del logro"
+    },
+    "requirement_type": {
+      "type": "string",
+      "enum": [
+        "total_completions",
+        "habit_count",
+        "challenge_count",
+        "streak_days",
+        "coins_earned",
+        "level_reached",
+        "friends_count",
+        "custom"
+      ],
+      "description": "Tipo de requisito"
+    },
+    "requirement_value": {
+      "type": "number",
+      "description": "Valor del requisito"
+    },
+    "reward_coins": {
+      "type": "number",
+      "default": 0,
+      "description": "Monedas de recompensa"
+    },
+    "reward_xp": {
+      "type": "number",
+      "default": 0,
+      "description": "XP de recompensa"
+    },
+    "reward_item_id": {
+      "type": "string",
+      "description": "ID de \u00edtem exclusivo como recompensa"
+    },
+    "rarity": {
+      "type": "string",
+      "enum": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "default": "common",
+      "description": "Rareza del logro"
+    },
+    "is_secret": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si es un logro secreto"
+    },
+    "secret_hint": {
+      "type": "string",
+      "description": "Pista para logros secretos"
+    }
+  },
+  "required": [
+    "achievement_id",
+    "title",
+    "description",
+    "icon",
+    "category",
+    "requirement_type",
+    "requirement_value"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "UserBadge",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario"
+    },
+    "badge_id": {
+      "type": "string",
+      "description": "ID del badge"
+    },
+    "current_level": {
+      "type": "number",
+      "default": 1,
+      "description": "Nivel actual del badge"
+    },
+    "current_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progreso actual hacia el siguiente nivel"
+    },
+    "unlocked_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de desbloqueo"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si est\u00e1 destacado en el perfil"
+    }
+  },
+  "required": [
+    "user_email",
+    "badge_id"
+  ]
+}

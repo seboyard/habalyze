@@ -1,0 +1,135 @@
+{
+  "name": "Habit",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre del h\u00e1bito"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del h\u00e1bito"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icono del h\u00e1bito",
+      "enum": [
+        "dumbbell",
+        "book",
+        "droplet",
+        "moon",
+        "utensils",
+        "heart",
+        "brain",
+        "smile",
+        "coffee",
+        "music"
+      ]
+    },
+    "color": {
+      "type": "string",
+      "description": "Color del h\u00e1bito",
+      "enum": [
+        "purple",
+        "blue",
+        "green",
+        "orange",
+        "pink",
+        "red",
+        "teal",
+        "yellow"
+      ]
+    },
+    "frequency": {
+      "type": "string",
+      "description": "Frecuencia del h\u00e1bito",
+      "enum": [
+        "daily",
+        "weekly",
+        "custom"
+      ],
+      "default": "daily"
+    },
+    "weekly_days": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "D\u00edas de la semana (0=domingo, 1=lunes, etc.) para frecuencia custom"
+    },
+    "times_per_week": {
+      "type": "number",
+      "description": "Veces por semana para frecuencia weekly",
+      "default": 1
+    },
+    "times_per_day": {
+      "type": "number",
+      "description": "Veces por d\u00eda para repeticiones diarias",
+      "default": 1
+    },
+    "scheduled_times": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Horas programadas para el h\u00e1bito (formato HH:mm)"
+    },
+    "current_streak": {
+      "type": "number",
+      "description": "Racha actual en d\u00edas",
+      "default": 0
+    },
+    "best_streak": {
+      "type": "number",
+      "description": "Mejor racha alcanzada",
+      "default": 0
+    },
+    "total_completions": {
+      "type": "number",
+      "description": "Total de veces completado",
+      "default": 0
+    },
+    "last_completed": {
+      "type": "string",
+      "format": "date",
+      "description": "\u00daltima vez completado"
+    },
+    "is_active": {
+      "type": "boolean",
+      "description": "Si el h\u00e1bito est\u00e1 activo",
+      "default": true
+    },
+    "parent_habit_id": {
+      "type": "string",
+      "description": "ID del h\u00e1bito padre si este es un sub-h\u00e1bito"
+    },
+    "group_key": {
+      "type": "string",
+      "description": "Clave de agrupamiento para identificar h\u00e1bitos relacionados"
+    },
+    "linked_goal_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs de objetivos vinculados a este h\u00e1bito"
+    },
+    "linked_project_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs de proyectos vinculados a este h\u00e1bito"
+    },
+    "contribution_weight": {
+      "type": "number",
+      "default": 1,
+      "description": "Peso de contribuci\u00f3n al objetivo (1-10)"
+    }
+  },
+  "required": [
+    "name",
+    "icon",
+    "color"
+  ]
+}

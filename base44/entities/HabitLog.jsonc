@@ -1,0 +1,27 @@
+{
+  "name": "HabitLog",
+  "type": "object",
+  "properties": {
+    "habit_id": {
+      "type": "string",
+      "description": "ID del h\u00e1bito"
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de completado"
+    },
+    "scheduled_time": {
+      "type": "string",
+      "description": "Hora programada que se complet\u00f3 (HH:mm)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notas opcionales"
+    }
+  },
+  "required": [
+    "habit_id",
+    "completed_date"
+  ]
+}

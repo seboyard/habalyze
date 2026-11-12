@@ -1,0 +1,97 @@
+{
+  "name": "Badge",
+  "type": "object",
+  "properties": {
+    "badge_id": {
+      "type": "string",
+      "description": "ID \u00fanico del badge"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nombre del badge"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del badge"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "social",
+        "habits",
+        "projects",
+        "streaks",
+        "special",
+        "events"
+      ],
+      "description": "Categor\u00eda del badge"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji del badge"
+    },
+    "requirement_type": {
+      "type": "string",
+      "enum": [
+        "invites",
+        "friends",
+        "habits_created",
+        "habits_completed",
+        "streak_days",
+        "projects_completed",
+        "challenges_won",
+        "level_reached",
+        "coins_earned",
+        "login_days",
+        "comments_given",
+        "custom"
+      ],
+      "description": "Tipo de requisito"
+    },
+    "levels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "number"
+          },
+          "requirement_value": {
+            "type": "number"
+          },
+          "color": {
+            "type": "string"
+          },
+          "border_color": {
+            "type": "string"
+          },
+          "glow": {
+            "type": "boolean"
+          }
+        }
+      },
+      "description": "Niveles del badge con sus requisitos"
+    },
+    "is_temporary": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si es un badge temporal"
+    },
+    "expires_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de expiraci\u00f3n si es temporal"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "badge_id",
+    "name",
+    "category",
+    "icon",
+    "requirement_type"
+  ]
+}

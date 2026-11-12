@@ -1,0 +1,134 @@
+{
+  "name": "Mission",
+  "type": "object",
+  "properties": {
+    "mission_id": {
+      "type": "string",
+      "description": "ID \u00fanico de la misi\u00f3n"
+    },
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo de la misi\u00f3n"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n de la misi\u00f3n"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji de la misi\u00f3n"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "saga",
+        "seasonal"
+      ],
+      "description": "Tipo de misi\u00f3n"
+    },
+    "objective_type": {
+      "type": "string",
+      "enum": [
+        "complete_habits",
+        "join_challenge",
+        "buy_item",
+        "reach_streak",
+        "earn_coins",
+        "level_up",
+        "add_friend",
+        "unlock_achievement"
+      ],
+      "description": "Tipo de objetivo"
+    },
+    "objective_value": {
+      "type": "number",
+      "description": "Valor del objetivo a alcanzar"
+    },
+    "reward_coins": {
+      "type": "number",
+      "default": 0,
+      "description": "Monedas de recompensa"
+    },
+    "reward_xp": {
+      "type": "number",
+      "default": 0,
+      "description": "XP de recompensa"
+    },
+    "reward_materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "material_id": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Materiales de recompensa"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de inicio (para estacionales)"
+    },
+    "expires_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de expiraci\u00f3n"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si la misi\u00f3n est\u00e1 activa"
+    },
+    "is_seasonal": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si es misi\u00f3n estacional"
+    },
+    "season_theme": {
+      "type": "string",
+      "enum": [
+        "halloween",
+        "christmas",
+        "new_year",
+        "valentines",
+        "summer",
+        "spring"
+      ],
+      "description": "Tema de la temporada"
+    },
+    "saga_id": {
+      "type": "string",
+      "description": "ID de la saga si pertenece a una"
+    },
+    "saga_order": {
+      "type": "number",
+      "description": "Orden en la saga"
+    },
+    "next_mission_id": {
+      "type": "string",
+      "description": "ID de la siguiente misi\u00f3n en la saga"
+    },
+    "is_secret": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si es una misi\u00f3n secreta"
+    }
+  },
+  "required": [
+    "mission_id",
+    "title",
+    "description",
+    "icon",
+    "type",
+    "objective_type",
+    "objective_value",
+    "expires_date"
+  ]
+}

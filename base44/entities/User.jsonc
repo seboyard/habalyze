@@ -1,0 +1,142 @@
+{
+  "display_name": {
+    "type": "string",
+    "description": "Nombre visible personalizado del usuario",
+    "default": ""
+  },
+  "username": {
+    "type": "string",
+    "description": "Nombre de usuario \u00fanico",
+    "default": ""
+  },
+  "bio": {
+    "type": "string",
+    "description": "Biograf\u00eda del usuario",
+    "default": ""
+  },
+  "avatar_config": {
+    "type": "object",
+    "description": "Configuraci\u00f3n del avatar",
+    "default": {}
+  },
+  "owned_shop_items": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "description": "IDs de los items de la tienda que el usuario posee",
+    "default": []
+  },
+  "level": {
+    "type": "number",
+    "default": 1,
+    "description": "Nivel del usuario"
+  },
+  "experience": {
+    "type": "number",
+    "default": 0,
+    "description": "XP del usuario"
+  },
+  "coins": {
+    "type": "number",
+    "default": 0,
+    "description": "Monedas del usuario"
+  },
+  "gems": {
+    "type": "number",
+    "default": 0,
+    "description": "Gemas premium"
+  },
+  "is_premium": {
+    "type": "boolean",
+    "default": false
+  },
+  "is_private": {
+    "type": "boolean",
+    "default": false,
+    "description": "Si el perfil es privado"
+  },
+  "interests": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "description": "Intereses del usuario",
+    "default": []
+  },
+  "profile_picture": {
+    "type": "string",
+    "description": "URL de la foto de perfil",
+    "default": ""
+  },
+  "banner_image": {
+    "type": "string",
+    "description": "URL de la imagen del banner del perfil",
+    "default": ""
+  },
+  "referral_code": {
+    "type": "string",
+    "description": "C\u00f3digo de referido del usuario",
+    "default": ""
+  },
+  "referred_by": {
+    "type": "string",
+    "description": "Email de quien lo refiri\u00f3",
+    "default": ""
+  },
+  "referral_count": {
+    "type": "number",
+    "default": 0,
+    "description": "Cantidad de referidos confirmados"
+  },
+  "lootboxes_opened": {
+    "type": "number",
+    "default": 0,
+    "description": "Cantidad de cajas abiertas"
+  },
+  "battle_pass_tier": {
+    "type": "number",
+    "default": 0,
+    "description": "Nivel en el pase de batalla actual"
+  },
+  "battle_pass_xp": {
+    "type": "number",
+    "default": 0,
+    "description": "XP del pase de batalla"
+  },
+  "linked_accounts": {
+    "type": "object",
+    "description": "Cuentas vinculadas (Telegram, etc.)",
+    "default": {}
+  },
+  "last_login_date": {
+    "type": "string",
+    "format": "date-time",
+    "description": "\u00daltima fecha de inicio de sesi\u00f3n"
+  },
+  "purchased_colors": {
+    "type": "object",
+    "description": "Colores personalizados comprados para items",
+    "default": {}
+  },
+  "owned_items": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "description": "IDs de items pose\u00eddos",
+    "default": []
+  },
+  "wishlist": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "description": "IDs de items en lista de deseos",
+    "default": []
+  },
+  "name": "User",
+  "type": "object",
+  "properties": {},
+  "required": []
+}

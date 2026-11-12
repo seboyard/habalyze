@@ -1,0 +1,46 @@
+{
+  "name": "FriendActivity",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario que realiz\u00f3 la acci\u00f3n"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Nombre del usuario"
+    },
+    "activity_type": {
+      "type": "string",
+      "enum": [
+        "habit_completed",
+        "challenge_joined",
+        "achievement_unlocked",
+        "streak_milestone",
+        "level_up"
+      ],
+      "description": "Tipo de actividad"
+    },
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo de la actividad"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n de la actividad"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji o icono"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Datos adicionales"
+    }
+  },
+  "required": [
+    "user_email",
+    "activity_type",
+    "title"
+  ]
+}

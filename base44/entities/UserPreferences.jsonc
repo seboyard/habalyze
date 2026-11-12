@@ -1,0 +1,152 @@
+{
+  "name": "UserPreferences",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario"
+    },
+    "onboarding_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "completed"
+      ],
+      "default": "pending",
+      "description": "Estado del onboarding"
+    },
+    "onboarding_version": {
+      "type": "string",
+      "description": "Versi\u00f3n del onboarding completado (v1, v2...)"
+    },
+    "has_completed_tour": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si complet\u00f3 el tour guiado"
+    },
+    "selected_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Objetivos de vida seleccionados en onboarding"
+    },
+    "primary_goal_id": {
+      "type": "string",
+      "description": "ID del Goal principal creado durante onboarding"
+    },
+    "primary_habit_id": {
+      "type": "string",
+      "description": "ID del primer Habit creado durante onboarding"
+    },
+    "motivation_level": {
+      "type": "string",
+      "description": "Nivel de motivaci\u00f3n"
+    },
+    "time_availability": {
+      "type": "string",
+      "description": "Disponibilidad de tiempo"
+    },
+    "show_daily_quote": {
+      "type": "boolean",
+      "default": true,
+      "description": "Mostrar frase de superaci\u00f3n diaria"
+    },
+    "group_similar_habits": {
+      "type": "boolean",
+      "default": true,
+      "description": "Agrupar h\u00e1bitos similares autom\u00e1ticamente"
+    },
+    "show_project_tasks_on_dashboard": {
+      "type": "boolean",
+      "default": true,
+      "description": "Mostrar tareas de caminos en dashboard"
+    },
+    "show_quick_start_guide": {
+      "type": "boolean",
+      "default": true,
+      "description": "Mostrar gu\u00eda de inicio r\u00e1pido"
+    },
+    "dashboard_layout": {
+      "type": "string",
+      "enum": [
+        "default",
+        "cards",
+        "minimal"
+      ],
+      "default": "default",
+      "description": "Dise\u00f1o del dashboard"
+    },
+    "dashboard_view_mode": {
+      "type": "string",
+      "enum": [
+        "balanced",
+        "habits_focused",
+        "goals_focused",
+        "projects_focused"
+      ],
+      "default": "balanced",
+      "description": "Modo de vista del dashboard"
+    },
+    "compact_view": {
+      "type": "boolean",
+      "default": false,
+      "description": "Vista compacta de h\u00e1bitos"
+    },
+    "daily_quote_cache": {
+      "type": "object",
+      "description": "Cache de la frase diaria"
+    },
+    "quick_start_dismissed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si se descart\u00f3 la gu\u00eda r\u00e1pida"
+    },
+    "feature_discovery_dismissed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si se descart\u00f3 el feature discovery"
+    },
+    "pwa_install_prompted": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si ya se le pidi\u00f3 instalar PWA"
+    },
+    "pwa_install_dismissed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si el usuario rechaz\u00f3 instalar PWA"
+    },
+    "show_proactive_coach": {
+      "type": "boolean",
+      "default": true,
+      "description": "Mostrar coach proactivo en dashboard"
+    },
+    "show_linked_items": {
+      "type": "boolean",
+      "default": true,
+      "description": "Mostrar items vinculados (h\u00e1bitos-objetivos-caminos)"
+    },
+    "auto_calculate_goal_progress": {
+      "type": "boolean",
+      "default": true,
+      "description": "Calcular autom\u00e1ticamente progreso de objetivos"
+    },
+    "show_goal_milestones_on_dashboard": {
+      "type": "boolean",
+      "default": true,
+      "description": "Mostrar hitos de objetivos en dashboard"
+    },
+    "preferred_template_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Categor\u00edas preferidas de plantillas"
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}
