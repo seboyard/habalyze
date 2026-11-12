@@ -1,45 +1,55 @@
 # Habalyze
 
-Aplicación en español para hábitos, objetivos y caminos, con XP, monedas, avatar, comunidad y un coach. Esta rama se puede desarrollar **sin Base44**: los datos viven en el navegador.
+Aplicación en español para hábitos, objetivos y caminos, con XP, monedas, avatar y coach.
 
-## Arrancar en local
+## Arrancar en local, sin servicios
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre la URL que imprime Vite (normalmente `http://localhost:5173`).
-
-1. En la portada pulsa **Probar en local**.
-2. Entra con `demo.local@habalyze.app`. No hay contraseña: la sesión es local.
-3. Si quieres vaciar la demo, en esa pantalla está **Restablecer datos de demostración**.
-
-Comprobar que compila:
+Por defecto `VITE_DATA_ADAPTER=local`. En la portada, **Probar en local**, correo `demo.local@habalyze.app`, sin contraseña. Los datos viven en el navegador.
 
 ```bash
 npm run build
 ```
 
-Copia `.env.example` a `.env` solo si vas a cambiar el adaptador. No pongas secretos en el repositorio.
+## Arrancar contra Supabase
 
-## Datos
+El proyecto `habalyze` ya existe. No hace falta crearlo y **no subas claves al repo**.
 
-Por defecto `VITE_DATA_ADAPTER=local`. El cliente sigue exponiendo `db.auth`, `db.entities`, `db.functions`, `db.integrations` y `db.agents`, que es la superficie que ya usaba la interfaz.
+1. En el SQL Editor del proyecto, pega y ejecuta `supabase/schema.sql` (es el mismo SQL que `supabase/migrations/20261112054221_habalyze_schema.sql`).
+2. Copia `.env.example` a `.env` y rellena solo en tu máquina:
 
-- **Local:** `localStorage` (`habalyze.local.v1`), con hábitos, tienda y amigos de demostración.
-- **Supabase:** el archivo `src/api/adapters/supabaseAdapter.js` describe el contrato, pero no crea un proyecto ni se conecta. Si faltan las claves, la app sigue en local.
+```bash
+VITE_DATA_ADAPTER=supabase
+VITE_SUPABASE_URL=https://<ref>.supabase.co
+VITE_SUPABASE_ANON_KEY=<clave anónima o publishable>
+```
 
-El detalle de lo que aún depende de Base44 está en `docs/ADAPTADOR_DATOS.md`.
+3. `npm run dev`. La pantalla de entrada pide correo y contraseña, y también puede enviar un enlace mágico.
+4. En el panel de Auth de Supabase, añade la URL local (`http://localhost:5173`) y la de Vercel a **Site URL** y **Redirect URLs**, si no el enlace mágico no vuelve a la app.
+5. Para abrir el panel de administración, después del primer registro:
+
+```sql
+insert into public.user_roles (user_id, role)
+values ('UUID-DEL-USUARIO', 'admin')
+on conflict (user_id) do update set role = 'admin';
+```
+
+El rol vive en `user_roles`, no en `user_metadata`.
+
+Si faltan la URL o la clave, aunque pongas `VITE_DATA_ADAPTER=supabase`, la app sigue en el adaptador local.
+
+## Vercel
+
+`vercel.json` reescribe las rutas del cliente a `index.html` para que `/dashboard` y el resto no den 404. El proyecto de Vercel ya está creado. Las variables `VITE_DATA_ADAPTER`, `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY` se configuran allí, no en git. La integración de GitHub puede seguir sin enlazarse: el primer despliegue hay que lanzarlo a mano. Producción debe quedar pública; la protección de los previews se ajusta en el panel de Vercel.
+
+## Qué falta fuera de este cliente
+
+PayPal, Telegram, el correo real y un modelo de IA siguen sin Edge Functions. El cliente responde con un error claro o, en el coach y las sugerencias de hábitos, con texto local. El detalle está en `docs/ADAPTADOR_DATOS.md`.
 
 ## Avatar
 
-El vestidor usa capas **Neo Pixel Cozy** (ficha aprobada). Los PNG curados están en `public/assets/neo_pixel_cozy/v1/` y el mapa en `src/avatar/neoPixelManifest.json`. Para regenerarlos hace falta el pack original y Pillow:
-
-```bash
-python3 scripts/normalize_neo_pixel_assets.py
-```
-
-Huecos conocidos: `docs/AVATARES_NEO_PIXEL_COZY.md`.
-
-Para volver al avatar dibujado en código, guarda `avatar_config.engine = "legacy"`.
+Capas Neo Pixel Cozy en `public/assets/neo_pixel_cozy/v1/`. Huecos: `docs/AVATARES_NEO_PIXEL_COZY.md`.
