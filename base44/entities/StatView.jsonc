@@ -1,0 +1,54 @@
+{
+  "name": "StatView",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario propietario de la vista"
+    },
+    "view_name": {
+      "type": "string",
+      "description": "Nombre de la vista personalizada"
+    },
+    "layout": {
+      "type": "array",
+      "description": "Configuraci\u00f3n del layout de las vistas",
+      "items": {
+        "type": "object",
+        "properties": {
+          "i": {
+            "type": "string"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "w": {
+            "type": "number"
+          },
+          "h": {
+            "type": "number"
+          },
+          "component": {
+            "type": "string"
+          },
+          "config": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "is_default": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si es la vista por defecto"
+    }
+  },
+  "required": [
+    "user_email",
+    "view_name",
+    "layout"
+  ]
+}

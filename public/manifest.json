@@ -1,0 +1,18 @@
+{
+  "name": "Habalyze",
+  "short_name": "Habalyze",
+  "description": "Hábitos diarios con avatar Neo Pixel Cozy, monedas y un coach local.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF6EA",
+  "theme_color": "#693CA1",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

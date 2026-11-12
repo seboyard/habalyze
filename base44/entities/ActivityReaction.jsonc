@@ -1,0 +1,35 @@
+{
+  "name": "ActivityReaction",
+  "type": "object",
+  "properties": {
+    "activity_id": {
+      "type": "string",
+      "description": "ID de la actividad"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario que reacciona"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Nombre del usuario"
+    },
+    "reaction_type": {
+      "type": "string",
+      "enum": [
+        "like",
+        "love",
+        "fire",
+        "clap",
+        "celebrate",
+        "support"
+      ],
+      "description": "Tipo de reacci\u00f3n"
+    }
+  },
+  "required": [
+    "activity_id",
+    "user_email",
+    "reaction_type"
+  ]
+}

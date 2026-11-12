@@ -1,0 +1,33 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "conversation_id": {
+      "type": "string",
+      "description": "ID de la conversaci\u00f3n (user1_user2 ordenados alfab\u00e9ticamente)"
+    },
+    "sender_email": {
+      "type": "string",
+      "description": "Email del remitente"
+    },
+    "receiver_email": {
+      "type": "string",
+      "description": "Email del destinatario"
+    },
+    "message": {
+      "type": "string",
+      "description": "Contenido del mensaje"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si el mensaje fue le\u00eddo"
+    }
+  },
+  "required": [
+    "conversation_id",
+    "sender_email",
+    "receiver_email",
+    "message"
+  ]
+}

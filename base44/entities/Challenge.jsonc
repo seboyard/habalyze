@@ -1,0 +1,111 @@
+{
+  "name": "Challenge",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo del desaf\u00edo"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del desaf\u00edo"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji del desaf\u00edo"
+    },
+    "challenge_type": {
+      "type": "string",
+      "enum": [
+        "individual",
+        "collaborative",
+        "competitive"
+      ],
+      "default": "individual",
+      "description": "Tipo de desaf\u00edo"
+    },
+    "creator_email": {
+      "type": "string",
+      "description": "Email del creador (para desaf\u00edos personalizados)"
+    },
+    "guild_id": {
+      "type": "string",
+      "description": "ID del gremio (para desaf\u00edos de gremio)"
+    },
+    "goal_type": {
+      "type": "string",
+      "enum": [
+        "total_completions",
+        "total_days",
+        "streak_days"
+      ],
+      "description": "Tipo de objetivo"
+    },
+    "goal_value": {
+      "type": "number",
+      "description": "Valor objetivo"
+    },
+    "current_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progreso actual del desaf\u00edo"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de inicio del desaf\u00edo"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de finalizaci\u00f3n del desaf\u00edo"
+    },
+    "reward_coins": {
+      "type": "number",
+      "description": "Monedas de recompensa al completar"
+    },
+    "reward_xp": {
+      "type": "number",
+      "description": "XP de recompensa al completar"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "completed",
+        "expired"
+      ],
+      "default": "active",
+      "description": "Estado del desaf\u00edo"
+    },
+    "participant_count": {
+      "type": "number",
+      "default": 0,
+      "description": "N\u00famero de participantes"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard",
+        "extreme"
+      ],
+      "default": "medium",
+      "description": "Dificultad del desaf\u00edo"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si est\u00e1 destacado"
+    }
+  },
+  "required": [
+    "title",
+    "goal_type",
+    "goal_value",
+    "start_date",
+    "end_date",
+    "reward_coins"
+  ]
+}

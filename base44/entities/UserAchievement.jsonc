@@ -1,0 +1,28 @@
+{
+  "name": "UserAchievement",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario"
+    },
+    "achievement_id": {
+      "type": "string",
+      "description": "ID del logro"
+    },
+    "unlocked_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de desbloqueo"
+    },
+    "progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progreso actual hacia el logro"
+    }
+  },
+  "required": [
+    "user_email",
+    "achievement_id"
+  ]
+}

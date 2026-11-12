@@ -1,0 +1,80 @@
+{
+  "name": "Gift",
+  "type": "object",
+  "properties": {
+    "gift_id": {
+      "type": "string",
+      "description": "ID \u00fanico del regalo"
+    },
+    "sender_email": {
+      "type": "string",
+      "description": "Email del remitente"
+    },
+    "sender_name": {
+      "type": "string",
+      "description": "Nombre del remitente"
+    },
+    "receiver_email": {
+      "type": "string",
+      "description": "Email del destinatario"
+    },
+    "receiver_name": {
+      "type": "string",
+      "description": "Nombre del destinatario"
+    },
+    "gift_type": {
+      "type": "string",
+      "enum": [
+        "coins",
+        "item",
+        "material"
+      ],
+      "description": "Tipo de regalo"
+    },
+    "item_id": {
+      "type": "string",
+      "description": "ID del \u00edtem si es un regalo de \u00edtem"
+    },
+    "coins_amount": {
+      "type": "number",
+      "description": "Cantidad de monedas si es regalo de monedas"
+    },
+    "material_id": {
+      "type": "string",
+      "description": "ID del material si es regalo de material"
+    },
+    "material_quantity": {
+      "type": "number",
+      "description": "Cantidad de material"
+    },
+    "message": {
+      "type": "string",
+      "description": "Mensaje personalizado"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "claimed",
+        "expired"
+      ],
+      "default": "pending",
+      "description": "Estado del regalo"
+    },
+    "sent_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de env\u00edo"
+    },
+    "claimed_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de reclamaci\u00f3n"
+    }
+  },
+  "required": [
+    "sender_email",
+    "receiver_email",
+    "gift_type"
+  ]
+}

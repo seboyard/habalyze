@@ -1,0 +1,32 @@
+{
+  "name": "ActivityComment",
+  "type": "object",
+  "properties": {
+    "activity_id": {
+      "type": "string",
+      "description": "ID de la actividad comentada"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario que comenta"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Nombre del usuario que comenta"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Contenido del comentario"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0,
+      "description": "Cantidad de likes del comentario"
+    }
+  },
+  "required": [
+    "activity_id",
+    "user_email",
+    "comment"
+  ]
+}

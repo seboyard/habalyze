@@ -1,0 +1,155 @@
+{
+  "name": "Goal",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo del objetivo"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n detallada del objetivo"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji del objetivo"
+    },
+    "color": {
+      "type": "string",
+      "enum": [
+        "purple",
+        "blue",
+        "green",
+        "orange",
+        "pink",
+        "red",
+        "teal",
+        "yellow"
+      ],
+      "default": "purple",
+      "description": "Color del objetivo"
+    },
+    "target_type": {
+      "type": "string",
+      "enum": [
+        "days",
+        "completions",
+        "streak",
+        "projects",
+        "custom"
+      ],
+      "description": "Tipo de meta: d\u00edas totales, completaciones totales, racha consecutiva, proyectos completados, o personalizado"
+    },
+    "target_value": {
+      "type": "number",
+      "description": "Valor objetivo a alcanzar"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de inicio del objetivo"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha l\u00edmite del objetivo"
+    },
+    "associated_habit_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs de los h\u00e1bitos asociados a este objetivo"
+    },
+    "associated_project_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs de los proyectos asociados a este objetivo"
+    },
+    "current_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Progreso actual del objetivo"
+    },
+    "progress_calculation_method": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "habit_completions",
+        "project_completion",
+        "weighted_average",
+        "milestone_based"
+      ],
+      "default": "manual",
+      "description": "M\u00e9todo de c\u00e1lculo del progreso"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si el objetivo fue completado"
+    },
+    "completion_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha en que se complet\u00f3 el objetivo"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "completed",
+        "abandoned",
+        "paused"
+      ],
+      "default": "active",
+      "description": "Estado del objetivo"
+    },
+    "parent_goal_id": {
+      "type": "string",
+      "description": "ID del objetivo padre para sub-objetivos"
+    },
+    "milestones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "target_value": {
+            "type": "number"
+          },
+          "completed": {
+            "type": "boolean"
+          },
+          "reward_coins": {
+            "type": "number"
+          },
+          "reward_xp": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Hitos intermedios del objetivo"
+    },
+    "reward_coins": {
+      "type": "number",
+      "default": 100,
+      "description": "Monedas al completar"
+    },
+    "reward_xp": {
+      "type": "number",
+      "default": 200,
+      "description": "XP al completar"
+    }
+  },
+  "required": [
+    "title",
+    "target_type",
+    "target_value",
+    "start_date",
+    "end_date"
+  ]
+}

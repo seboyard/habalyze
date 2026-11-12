@@ -1,0 +1,27 @@
+{
+  "name": "GuildPostComment",
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "description": "ID del post"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email del autor"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Nombre del autor"
+    },
+    "content": {
+      "type": "string",
+      "description": "Contenido del comentario"
+    }
+  },
+  "required": [
+    "post_id",
+    "author_email",
+    "content"
+  ]
+}

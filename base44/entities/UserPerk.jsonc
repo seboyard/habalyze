@@ -1,0 +1,53 @@
+{
+  "name": "UserPerk",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario"
+    },
+    "perk_id": {
+      "type": "string",
+      "description": "ID del perk"
+    },
+    "is_unlocked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si est\u00e1 desbloqueado"
+    },
+    "unlocked_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de desbloqueo"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si est\u00e1 activo actualmente"
+    },
+    "activated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u00daltima activaci\u00f3n"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Cu\u00e1ndo expira la activaci\u00f3n"
+    },
+    "uses_today": {
+      "type": "number",
+      "default": 0,
+      "description": "Usos del perk hoy"
+    },
+    "total_uses": {
+      "type": "number",
+      "default": 0,
+      "description": "Usos totales"
+    }
+  },
+  "required": [
+    "user_email",
+    "perk_id"
+  ]
+}

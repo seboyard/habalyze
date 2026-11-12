@@ -1,0 +1,78 @@
+{
+  "name": "ShopPack",
+  "type": "object",
+  "properties": {
+    "pack_id": {
+      "type": "string",
+      "description": "ID \u00fanico del pack"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nombre del pack"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del pack"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji del pack"
+    },
+    "item_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs de los items incluidos"
+    },
+    "original_price": {
+      "type": "number",
+      "description": "Precio original sin descuento"
+    },
+    "discount_price": {
+      "type": "number",
+      "description": "Precio con descuento"
+    },
+    "discount_percentage": {
+      "type": "number",
+      "description": "Porcentaje de descuento"
+    },
+    "rarity": {
+      "type": "string",
+      "enum": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "default": "common",
+      "description": "Rareza del pack"
+    },
+    "color_gradient": {
+      "type": "string",
+      "description": "Clases de gradiente CSS"
+    },
+    "is_available": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si est\u00e1 disponible"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si est\u00e1 destacado"
+    },
+    "sort_order": {
+      "type": "number",
+      "default": 0,
+      "description": "Orden de visualizaci\u00f3n"
+    }
+  },
+  "required": [
+    "pack_id",
+    "name",
+    "item_ids",
+    "original_price",
+    "discount_price"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "ProfileComment",
+  "type": "object",
+  "properties": {
+    "profile_user_email": {
+      "type": "string",
+      "description": "Email del due\u00f1o del perfil"
+    },
+    "commenter_email": {
+      "type": "string",
+      "description": "Email de quien comenta"
+    },
+    "commenter_name": {
+      "type": "string",
+      "description": "Nombre de quien comenta"
+    },
+    "content": {
+      "type": "string",
+      "description": "Contenido del comentario"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0,
+      "description": "Cantidad de likes"
+    }
+  },
+  "required": [
+    "profile_user_email",
+    "commenter_email",
+    "content"
+  ]
+}

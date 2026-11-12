@@ -1,0 +1,2039 @@
+{
+  "version": "1.0.0",
+  "style": "neo-pixel-cozy",
+  "canvas": {
+    "width": 96,
+    "height": 128,
+    "groundY": 118,
+    "displayScale": 4
+  },
+  "palette": {
+    "plum_950": "#2B1741",
+    "violet_700": "#693CA1",
+    "lilac_400": "#BA92EB",
+    "cream_100": "#FFF4DD",
+    "mint_400": "#78CAA8",
+    "gold_400": "#FFC95D",
+    "rose_400": "#ED87B0",
+    "slate_650": "#555267"
+  },
+  "layerOrder": [
+    "aura_back",
+    "backpack_back",
+    "body_base",
+    "mobility_equipment",
+    "lower_clothing",
+    "shoes",
+    "upper_clothing",
+    "face",
+    "horns_antennae",
+    "hair_front",
+    "headwear",
+    "glasses",
+    "hand_prop",
+    "aura_front",
+    "companion_front"
+  ],
+  "rigs": {
+    "humanoid_standard": {
+      "id": "humanoid_standard",
+      "anchors": {
+        "head": [
+          48,
+          24
+        ],
+        "face": [
+          48,
+          40
+        ],
+        "torso": [
+          48,
+          66
+        ],
+        "hips": [
+          48,
+          84
+        ],
+        "hand": [
+          73,
+          68
+        ],
+        "feet": [
+          48,
+          116
+        ],
+        "companion": [
+          17,
+          116
+        ],
+        "ground": [
+          48,
+          118
+        ]
+      }
+    },
+    "humanoid_wide": {
+      "id": "humanoid_wide",
+      "anchors": {
+        "head": [
+          48,
+          20
+        ],
+        "face": [
+          48,
+          36
+        ],
+        "torso": [
+          48,
+          63
+        ],
+        "hips": [
+          48,
+          82
+        ],
+        "hand": [
+          79,
+          66
+        ],
+        "feet": [
+          48,
+          116
+        ],
+        "companion": [
+          11,
+          116
+        ],
+        "ground": [
+          48,
+          118
+        ]
+      }
+    },
+    "humanoid_tall": {
+      "id": "humanoid_tall",
+      "anchors": {
+        "head": [
+          47,
+          16
+        ],
+        "face": [
+          47,
+          33
+        ],
+        "torso": [
+          47,
+          61
+        ],
+        "hips": [
+          47,
+          81
+        ],
+        "hand": [
+          74,
+          64
+        ],
+        "feet": [
+          47,
+          116
+        ],
+        "companion": [
+          15,
+          116
+        ],
+        "ground": [
+          47,
+          118
+        ]
+      }
+    },
+    "humanoid_seated": {
+      "id": "humanoid_seated",
+      "anchors": {
+        "head": [
+          48,
+          24
+        ],
+        "face": [
+          48,
+          40
+        ],
+        "torso": [
+          48,
+          66
+        ],
+        "hips": [
+          48,
+          84
+        ],
+        "hand": [
+          73,
+          68
+        ],
+        "feet": [
+          48,
+          116
+        ],
+        "companion": [
+          17,
+          116
+        ],
+        "ground": [
+          48,
+          118
+        ]
+      }
+    }
+  },
+  "bodies": [
+    {
+      "id": "body_lumo",
+      "name": "Lumo",
+      "rig": "humanoid_standard",
+      "src": "/assets/neo_pixel_cozy/v1/bodies/body_lumo.png",
+      "note": "Piel cálida, cuerpo medio"
+    },
+    {
+      "id": "body_mora",
+      "name": "Mora",
+      "rig": "humanoid_wide",
+      "src": "/assets/neo_pixel_cozy/v1/bodies/body_mora.png",
+      "note": "Complexión ancha, tez profunda (tintado: no había base oscura nativa)"
+    },
+    {
+      "id": "body_brasa",
+      "name": "Brasa",
+      "rig": "humanoid_wide",
+      "src": "/assets/neo_pixel_cozy/v1/bodies/body_brasa.png",
+      "note": "Complexión ancha, piel granate (tintado: no había cuerpo demonio)"
+    },
+    {
+      "id": "body_vek",
+      "name": "Vek",
+      "rig": "humanoid_tall",
+      "src": "/assets/neo_pixel_cozy/v1/bodies/body_vek.png",
+      "note": "Cuerpo alto, piel turquesa"
+    },
+    {
+      "id": "body_nix",
+      "name": "Nix",
+      "rig": "humanoid_seated",
+      "src": "/assets/neo_pixel_cozy/v1/bodies/body_nix.png",
+      "note": "Piel oliva. La silla es una capa aparte porque el pack no traía silla."
+    }
+  ],
+  "mobility": {
+    "id": "wheelchair",
+    "name": "Silla de ruedas",
+    "slot": "mobility_equipment",
+    "src": "/assets/neo_pixel_cozy/v1/bodies/wheelchair.png",
+    "fullCanvas": true,
+    "z": 12,
+    "rigs": [
+      "humanoid_seated"
+    ],
+    "note": "Dibujada: el pack no incluía una silla alineada al rig."
+  },
+  "expressions": [
+    {
+      "id": "alegre",
+      "name": "Alegre",
+      "slot": "face",
+      "src": "/assets/neo_pixel_cozy/v1/expressions/alegre.png",
+      "w": 36,
+      "h": 18,
+      "anchor": "face",
+      "origin": "center",
+      "z": 15
+    },
+    {
+      "id": "calma",
+      "name": "Calma",
+      "slot": "face",
+      "src": "/assets/neo_pixel_cozy/v1/expressions/calma.png",
+      "w": 36,
+      "h": 18,
+      "anchor": "face",
+      "origin": "center",
+      "z": 15
+    },
+    {
+      "id": "cansada",
+      "name": "Cansada",
+      "slot": "face",
+      "src": "/assets/neo_pixel_cozy/v1/expressions/cansada.png",
+      "w": 36,
+      "h": 18,
+      "anchor": "face",
+      "origin": "center",
+      "z": 15
+    }
+  ],
+  "auras": [
+    {
+      "id": "sparkles",
+      "name": "Chispas",
+      "slot": "aura_back",
+      "src": "/assets/neo_pixel_cozy/v1/auras/sparkles.png",
+      "w": 96,
+      "h": 128,
+      "anchor": "ground",
+      "origin": "top",
+      "z": -40,
+      "shopCategory": "effect",
+      "price": 40,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "✨",
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "fullCanvas": true
+    },
+    {
+      "id": "hearts",
+      "name": "Corazones",
+      "slot": "aura_back",
+      "src": "/assets/neo_pixel_cozy/v1/auras/hearts.png",
+      "w": 96,
+      "h": 128,
+      "anchor": "ground",
+      "origin": "top",
+      "z": -40,
+      "shopCategory": "effect",
+      "price": 40,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "✨",
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "fullCanvas": true
+    },
+    {
+      "id": "ring",
+      "name": "Anillo",
+      "slot": "aura_back",
+      "src": "/assets/neo_pixel_cozy/v1/auras/ring.png",
+      "w": 96,
+      "h": 128,
+      "anchor": "ground",
+      "origin": "top",
+      "z": -40,
+      "shopCategory": "effect",
+      "price": 30,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "✨",
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "fullCanvas": true
+    }
+  ],
+  "items": [
+    {
+      "id": "hair_brown_bun",
+      "name": "Moño castaño",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_brown_bun.png",
+      "w": 46,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 0,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": true,
+      "icon": "🎀",
+      "source": "05_modulares_generales/05_modulares_generales_001.png"
+    },
+    {
+      "id": "hair_white",
+      "name": "Melena blanca",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_white.png",
+      "w": 59,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 70,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🤍",
+      "source": "05_modulares_generales/05_modulares_generales_002.png"
+    },
+    {
+      "id": "hair_dark",
+      "name": "Pelo oscuro",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_dark.png",
+      "w": 59,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 40,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🖤",
+      "source": "05_modulares_generales/05_modulares_generales_003.png"
+    },
+    {
+      "id": "hair_blonde",
+      "name": "Rubio corto",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_blonde.png",
+      "w": 50,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 40,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "💛",
+      "source": "05_modulares_generales/05_modulares_generales_004.png"
+    },
+    {
+      "id": "hair_teal",
+      "name": "Flequillo menta",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_teal.png",
+      "w": 49,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 0,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": true,
+      "icon": "💚",
+      "source": "05_modulares_generales/05_modulares_generales_006.png"
+    },
+    {
+      "id": "hair_pink",
+      "name": "Coletas rosas",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_pink.png",
+      "w": 51,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 80,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "💗",
+      "source": "05_modulares_generales/05_modulares_generales_009.png"
+    },
+    {
+      "id": "hair_violet",
+      "name": "Ondas violetas",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_violet.png",
+      "w": 45,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 90,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "💜",
+      "source": "05_modulares_generales/05_modulares_generales_013.png"
+    },
+    {
+      "id": "hair_blue",
+      "name": "Colas azules",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_blue.png",
+      "w": 55,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 90,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "💙",
+      "source": "05_modulares_generales/05_modulares_generales_021.png"
+    },
+    {
+      "id": "hair_cat",
+      "name": "Pelo con orejas",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_cat.png",
+      "w": 52,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 120,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🐱",
+      "source": "05_modulares_generales/05_modulares_generales_019.png"
+    },
+    {
+      "id": "hair_brasa",
+      "name": "Mechones de brasa",
+      "slot": "hair_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/hair_brasa.png",
+      "w": 59,
+      "h": 46,
+      "anchor": "head",
+      "origin": "center",
+      "z": 30,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hair",
+      "price": 110,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🔥",
+      "source": "03_demonio/03_demonio_001.png"
+    },
+    {
+      "id": "horns_curl",
+      "name": "Cuernos curvos",
+      "slot": "horns_antennae",
+      "src": "/assets/neo_pixel_cozy/v1/items/horns_curl.png",
+      "w": 25,
+      "h": 30,
+      "anchor": "head",
+      "origin": "bottom",
+      "z": 32,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hat",
+      "price": 100,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🌙",
+      "source": "04_alien/04_alien_007.png"
+    },
+    {
+      "id": "horns_gold",
+      "name": "Cuernos dorados",
+      "slot": "horns_antennae",
+      "src": "/assets/neo_pixel_cozy/v1/items/horns_gold.png",
+      "w": 34,
+      "h": 30,
+      "anchor": "head",
+      "origin": "bottom",
+      "z": 32,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hat",
+      "price": 0,
+      "rarity": "legendary",
+      "unlock": {
+        "type": "streak",
+        "value": 7
+      },
+      "free": false,
+      "icon": "✨",
+      "source": "05_modulares_generales/05_modulares_generales_049.png"
+    },
+    {
+      "id": "antenna_lila",
+      "name": "Antena lila",
+      "slot": "horns_antennae",
+      "src": "/assets/neo_pixel_cozy/v1/items/antenna_lila.png",
+      "w": 16,
+      "h": 30,
+      "anchor": "head",
+      "origin": "bottom",
+      "z": 32,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hat",
+      "price": 60,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "📡",
+      "source": "04_alien/04_alien_036.png"
+    },
+    {
+      "id": "top_cream",
+      "name": "Suéter crema",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_cream.png",
+      "w": 53,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 0,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": true,
+      "icon": "🤍",
+      "source": "02_prendas_y_props/02_prendas_y_props_001.png"
+    },
+    {
+      "id": "top_moon",
+      "name": "Top luna",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_moon.png",
+      "w": 43,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 70,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🌙",
+      "source": "02_prendas_y_props/02_prendas_y_props_004.png"
+    },
+    {
+      "id": "top_star",
+      "name": "Top estrella",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_star.png",
+      "w": 41,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 70,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "⭐",
+      "source": "02_prendas_y_props/02_prendas_y_props_007.png"
+    },
+    {
+      "id": "top_hoodie_blue",
+      "name": "Sudadera alien",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_hoodie_blue.png",
+      "w": 50,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 90,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "👽",
+      "source": "02_prendas_y_props/02_prendas_y_props_015.png"
+    },
+    {
+      "id": "top_fire",
+      "name": "Chaqueta de fuego",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_fire.png",
+      "w": 53,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 130,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🔥",
+      "source": "02_prendas_y_props/02_prendas_y_props_018.png"
+    },
+    {
+      "id": "top_hoodie_yellow",
+      "name": "Sudadera sol",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_hoodie_yellow.png",
+      "w": 54,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 80,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🌞",
+      "source": "02_prendas_y_props/02_prendas_y_props_021.png"
+    },
+    {
+      "id": "top_hoodie_green",
+      "name": "Sudadera huerto",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_hoodie_green.png",
+      "w": 47,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 80,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🌿",
+      "source": "02_prendas_y_props/02_prendas_y_props_022.png"
+    },
+    {
+      "id": "top_hoodie_pink",
+      "name": "Sudadera conejo",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_hoodie_pink.png",
+      "w": 51,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 80,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🐰",
+      "source": "02_prendas_y_props/02_prendas_y_props_023.png"
+    },
+    {
+      "id": "top_hoodie_purple",
+      "name": "Sudadera violeta",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_hoodie_purple.png",
+      "w": 56,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 0,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": true,
+      "icon": "💜",
+      "source": "02_prendas_y_props/02_prendas_y_props_026.png"
+    },
+    {
+      "id": "top_jacket",
+      "name": "Chaqueta varsity",
+      "slot": "upper_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/top_jacket.png",
+      "w": 54,
+      "h": 42,
+      "anchor": "torso",
+      "origin": "center",
+      "z": 10,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shirt",
+      "price": 120,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🧥",
+      "source": "02_prendas_y_props/02_prendas_y_props_027.png"
+    },
+    {
+      "id": "shorts_rose",
+      "name": "Shorts rosados",
+      "slot": "lower_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/shorts_rose.png",
+      "w": 35,
+      "h": 36,
+      "anchor": "hips",
+      "origin": "center",
+      "z": 0,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pants",
+      "price": 50,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🩳",
+      "source": "02_prendas_y_props/02_prendas_y_props_031.png"
+    },
+    {
+      "id": "shorts_green",
+      "name": "Shorts de huerto",
+      "slot": "lower_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/shorts_green.png",
+      "w": 33,
+      "h": 36,
+      "anchor": "hips",
+      "origin": "center",
+      "z": 0,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pants",
+      "price": 50,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🌿",
+      "source": "02_prendas_y_props/02_prendas_y_props_032.png"
+    },
+    {
+      "id": "jeans",
+      "name": "Vaqueros",
+      "slot": "lower_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/jeans.png",
+      "w": 28,
+      "h": 36,
+      "anchor": "hips",
+      "origin": "center",
+      "z": 0,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pants",
+      "price": 0,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": true,
+      "icon": "👖",
+      "source": "02_prendas_y_props/02_prendas_y_props_033.png"
+    },
+    {
+      "id": "pants_moon",
+      "name": "Pantalón luna",
+      "slot": "lower_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/pants_moon.png",
+      "w": 33,
+      "h": 36,
+      "anchor": "hips",
+      "origin": "center",
+      "z": 0,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pants",
+      "price": 80,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🌙",
+      "source": "02_prendas_y_props/02_prendas_y_props_035.png"
+    },
+    {
+      "id": "pants_cargo",
+      "name": "Cargo violeta",
+      "slot": "lower_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/pants_cargo.png",
+      "w": 33,
+      "h": 36,
+      "anchor": "hips",
+      "origin": "center",
+      "z": 0,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pants",
+      "price": 70,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "👖",
+      "source": "02_prendas_y_props/02_prendas_y_props_043.png"
+    },
+    {
+      "id": "skirt_gold",
+      "name": "Falda dorada",
+      "slot": "lower_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/skirt_gold.png",
+      "w": 46,
+      "h": 36,
+      "anchor": "hips",
+      "origin": "center",
+      "z": 0,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pants",
+      "price": 90,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "✨",
+      "source": "02_prendas_y_props/02_prendas_y_props_045.png"
+    },
+    {
+      "id": "skirt_purple",
+      "name": "Falda violeta",
+      "slot": "lower_clothing",
+      "src": "/assets/neo_pixel_cozy/v1/items/skirt_purple.png",
+      "w": 49,
+      "h": 36,
+      "anchor": "hips",
+      "origin": "center",
+      "z": 0,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pants",
+      "price": 0,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": true,
+      "icon": "💜",
+      "source": "02_prendas_y_props/02_prendas_y_props_055.png"
+    },
+    {
+      "id": "shoes_pink",
+      "name": "Botitas rosas",
+      "slot": "shoes",
+      "src": "/assets/neo_pixel_cozy/v1/items/shoes_pink.png",
+      "w": 34,
+      "h": 22,
+      "anchor": "feet",
+      "origin": "bottom",
+      "z": 5,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shoes",
+      "price": 40,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "👟",
+      "source": "02_prendas_y_props/02_prendas_y_props_087.png"
+    },
+    {
+      "id": "shoes_red",
+      "name": "Zapatillas rojas",
+      "slot": "shoes",
+      "src": "/assets/neo_pixel_cozy/v1/items/shoes_red.png",
+      "w": 35,
+      "h": 22,
+      "anchor": "feet",
+      "origin": "bottom",
+      "z": 5,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shoes",
+      "price": 50,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "👟",
+      "source": "02_prendas_y_props/02_prendas_y_props_089.png"
+    },
+    {
+      "id": "shoes_yellow",
+      "name": "Zapatillas sol",
+      "slot": "shoes",
+      "src": "/assets/neo_pixel_cozy/v1/items/shoes_yellow.png",
+      "w": 34,
+      "h": 22,
+      "anchor": "feet",
+      "origin": "bottom",
+      "z": 5,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shoes",
+      "price": 50,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "👟",
+      "source": "02_prendas_y_props/02_prendas_y_props_091.png"
+    },
+    {
+      "id": "shoes_mint",
+      "name": "Zapatillas menta",
+      "slot": "shoes",
+      "src": "/assets/neo_pixel_cozy/v1/items/shoes_mint.png",
+      "w": 32,
+      "h": 22,
+      "anchor": "feet",
+      "origin": "bottom",
+      "z": 5,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shoes",
+      "price": 0,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": true,
+      "icon": "👟",
+      "source": "02_prendas_y_props/02_prendas_y_props_092.png"
+    },
+    {
+      "id": "shoes_brown",
+      "name": "Botas de campo",
+      "slot": "shoes",
+      "src": "/assets/neo_pixel_cozy/v1/items/shoes_brown.png",
+      "w": 28,
+      "h": 22,
+      "anchor": "feet",
+      "origin": "bottom",
+      "z": 5,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shoes",
+      "price": 60,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🥾",
+      "source": "02_prendas_y_props/02_prendas_y_props_093.png"
+    },
+    {
+      "id": "shoes_white",
+      "name": "Botas blancas",
+      "slot": "shoes",
+      "src": "/assets/neo_pixel_cozy/v1/items/shoes_white.png",
+      "w": 32,
+      "h": 22,
+      "anchor": "feet",
+      "origin": "bottom",
+      "z": 5,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shoes",
+      "price": 0,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": true,
+      "icon": "🥾",
+      "source": "02_prendas_y_props/02_prendas_y_props_099.png"
+    },
+    {
+      "id": "shoes_purple",
+      "name": "Botas violetas",
+      "slot": "shoes",
+      "src": "/assets/neo_pixel_cozy/v1/items/shoes_purple.png",
+      "w": 31,
+      "h": 22,
+      "anchor": "feet",
+      "origin": "bottom",
+      "z": 5,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "shoes",
+      "price": 70,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🥾",
+      "source": "02_prendas_y_props/02_prendas_y_props_098.png"
+    },
+    {
+      "id": "hat_witch",
+      "name": "Sombrero de bruja",
+      "slot": "headwear",
+      "src": "/assets/neo_pixel_cozy/v1/items/hat_witch.png",
+      "w": 50,
+      "h": 40,
+      "anchor": "head",
+      "origin": "bottom",
+      "z": 35,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hat",
+      "price": 100,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🧙",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_001.png"
+    },
+    {
+      "id": "hat_moon",
+      "name": "Sombrero luna",
+      "slot": "headwear",
+      "src": "/assets/neo_pixel_cozy/v1/items/hat_moon.png",
+      "w": 53,
+      "h": 40,
+      "anchor": "head",
+      "origin": "bottom",
+      "z": 35,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hat",
+      "price": 110,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🌙",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_002.png"
+    },
+    {
+      "id": "hat_flower",
+      "name": "Sombrero floral",
+      "slot": "headwear",
+      "src": "/assets/neo_pixel_cozy/v1/items/hat_flower.png",
+      "w": 46,
+      "h": 40,
+      "anchor": "head",
+      "origin": "bottom",
+      "z": 35,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hat",
+      "price": 90,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🌸",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_003.png"
+    },
+    {
+      "id": "hat_star",
+      "name": "Sombrero estrella",
+      "slot": "headwear",
+      "src": "/assets/neo_pixel_cozy/v1/items/hat_star.png",
+      "w": 55,
+      "h": 40,
+      "anchor": "head",
+      "origin": "bottom",
+      "z": 35,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hat",
+      "price": 90,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "⭐",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_004.png"
+    },
+    {
+      "id": "hat_bow",
+      "name": "Gorro con lazo",
+      "slot": "headwear",
+      "src": "/assets/neo_pixel_cozy/v1/items/hat_bow.png",
+      "w": 55,
+      "h": 40,
+      "anchor": "head",
+      "origin": "bottom",
+      "z": 35,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hat",
+      "price": 60,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🎀",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_006.png"
+    },
+    {
+      "id": "wings_fairy",
+      "name": "Alas hada",
+      "slot": "backpack_back",
+      "src": "/assets/neo_pixel_cozy/v1/items/wings_fairy.png",
+      "w": 45,
+      "h": 58,
+      "anchor": "torso",
+      "origin": "center",
+      "z": -20,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "backpack",
+      "price": 0,
+      "rarity": "epic",
+      "unlock": {
+        "type": "streak",
+        "value": 7
+      },
+      "free": false,
+      "icon": "🦋",
+      "source": "05_modulares_generales/05_modulares_generales_057.png"
+    },
+    {
+      "id": "wings_bat",
+      "name": "Alas murciélago",
+      "slot": "backpack_back",
+      "src": "/assets/neo_pixel_cozy/v1/items/wings_bat.png",
+      "w": 74,
+      "h": 58,
+      "anchor": "torso",
+      "origin": "center",
+      "z": -20,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "backpack",
+      "price": 140,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🦇",
+      "source": "05_modulares_generales/05_modulares_generales_075.png"
+    },
+    {
+      "id": "wings_angel",
+      "name": "Alas claras",
+      "slot": "backpack_back",
+      "src": "/assets/neo_pixel_cozy/v1/items/wings_angel.png",
+      "w": 76,
+      "h": 58,
+      "anchor": "torso",
+      "origin": "center",
+      "z": -20,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "backpack",
+      "price": 140,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🕊️",
+      "source": "05_modulares_generales/05_modulares_generales_073.png"
+    },
+    {
+      "id": "cape_moon",
+      "name": "Capa luna",
+      "slot": "backpack_back",
+      "src": "/assets/neo_pixel_cozy/v1/items/cape_moon.png",
+      "w": 68,
+      "h": 58,
+      "anchor": "torso",
+      "origin": "center",
+      "z": -20,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "backpack",
+      "price": 120,
+      "rarity": "rare",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🌙",
+      "source": "02_prendas_y_props/02_prendas_y_props_081.png"
+    },
+    {
+      "id": "bag_moon",
+      "name": "Mochila luna",
+      "slot": "backpack_back",
+      "src": "/assets/neo_pixel_cozy/v1/items/bag_moon.png",
+      "w": 62,
+      "h": 58,
+      "anchor": "torso",
+      "origin": "center",
+      "z": -20,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "backpack",
+      "price": 80,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🎒",
+      "source": "02_prendas_y_props/02_prendas_y_props_108.png"
+    },
+    {
+      "id": "bag_bat",
+      "name": "Mochila murciélago",
+      "slot": "backpack_back",
+      "src": "/assets/neo_pixel_cozy/v1/items/bag_bat.png",
+      "w": 66,
+      "h": 58,
+      "anchor": "torso",
+      "origin": "center",
+      "z": -20,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "backpack",
+      "price": 90,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🎒",
+      "source": "02_prendas_y_props/02_prendas_y_props_110.png"
+    },
+    {
+      "id": "prop_book",
+      "name": "Libro de hechizos",
+      "slot": "hand_prop",
+      "src": "/assets/neo_pixel_cozy/v1/items/prop_book.png",
+      "w": 27,
+      "h": 34,
+      "anchor": "hand",
+      "origin": "bottom",
+      "z": 40,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hand",
+      "price": 70,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "📖",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_155.png"
+    },
+    {
+      "id": "prop_potion",
+      "name": "Poción rosa",
+      "slot": "hand_prop",
+      "src": "/assets/neo_pixel_cozy/v1/items/prop_potion.png",
+      "w": 22,
+      "h": 34,
+      "anchor": "hand",
+      "origin": "bottom",
+      "z": 40,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hand",
+      "price": 40,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🧪",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_146.png"
+    },
+    {
+      "id": "prop_lantern",
+      "name": "Farol",
+      "slot": "hand_prop",
+      "src": "/assets/neo_pixel_cozy/v1/items/prop_lantern.png",
+      "w": 20,
+      "h": 34,
+      "anchor": "hand",
+      "origin": "bottom",
+      "z": 40,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "hand",
+      "price": 50,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🏮",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_096.png"
+    },
+    {
+      "id": "pet_shiba",
+      "name": "Shiba",
+      "slot": "companion_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/pet_shiba.png",
+      "w": 29,
+      "h": 40,
+      "anchor": "companion",
+      "origin": "bottom",
+      "z": 55,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pet",
+      "price": 0,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": true,
+      "icon": "🐶",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_176.png"
+    },
+    {
+      "id": "pet_bunny",
+      "name": "Conejo",
+      "slot": "companion_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/pet_bunny.png",
+      "w": 28,
+      "h": 40,
+      "anchor": "companion",
+      "origin": "bottom",
+      "z": 55,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pet",
+      "price": 80,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🐰",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_177.png"
+    },
+    {
+      "id": "pet_owl",
+      "name": "Búho",
+      "slot": "companion_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/pet_owl.png",
+      "w": 36,
+      "h": 40,
+      "anchor": "companion",
+      "origin": "bottom",
+      "z": 55,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pet",
+      "price": 90,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🦉",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_181.png"
+    },
+    {
+      "id": "pet_frog",
+      "name": "Rana",
+      "slot": "companion_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/pet_frog.png",
+      "w": 34,
+      "h": 40,
+      "anchor": "companion",
+      "origin": "bottom",
+      "z": 55,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pet",
+      "price": 70,
+      "rarity": "common",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🐸",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_182.png"
+    },
+    {
+      "id": "pet_dragon",
+      "name": "Dragón pequeño",
+      "slot": "companion_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/pet_dragon.png",
+      "w": 39,
+      "h": 40,
+      "anchor": "companion",
+      "origin": "bottom",
+      "z": 55,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pet",
+      "price": 0,
+      "rarity": "legendary",
+      "unlock": {
+        "type": "streak",
+        "value": 7
+      },
+      "free": false,
+      "icon": "🐉",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_172.png"
+    },
+    {
+      "id": "pet_robot",
+      "name": "Robot mascota",
+      "slot": "companion_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/pet_robot.png",
+      "w": 32,
+      "h": 40,
+      "anchor": "companion",
+      "origin": "bottom",
+      "z": 55,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pet",
+      "price": 140,
+      "rarity": "epic",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🤖",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_173.png"
+    },
+    {
+      "id": "pet_cat",
+      "name": "Gato brujo",
+      "slot": "companion_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/pet_cat.png",
+      "w": 40,
+      "h": 31,
+      "anchor": "companion",
+      "origin": "bottom",
+      "z": 55,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pet",
+      "price": 100,
+      "rarity": "rare",
+      "unlock": {
+        "type": "level",
+        "value": 2
+      },
+      "free": false,
+      "icon": "🐱",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_162.png"
+    },
+    {
+      "id": "pet_hedgehog",
+      "name": "Erizo",
+      "slot": "companion_front",
+      "src": "/assets/neo_pixel_cozy/v1/items/pet_hedgehog.png",
+      "w": 40,
+      "h": 36,
+      "anchor": "companion",
+      "origin": "bottom",
+      "z": 55,
+      "rigs": [
+        "humanoid_standard",
+        "humanoid_wide",
+        "humanoid_tall",
+        "humanoid_seated"
+      ],
+      "shopCategory": "pet",
+      "price": 80,
+      "rarity": "rare",
+      "unlock": {
+        "type": "none"
+      },
+      "free": false,
+      "icon": "🦔",
+      "source": "01_fantasia_bruja/01_fantasia_bruja_185.png"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "habitacion_cozy",
+      "name": "Habitación cozy",
+      "src": "/assets/neo_pixel_cozy/v1/scenes/habitacion_cozy/background_640x360.png",
+      "srcSmall": "/assets/neo_pixel_cozy/v1/scenes/habitacion_cozy/background_320x180.png"
+    },
+    {
+      "id": "azotea_cyberpunk",
+      "name": "Azotea nocturna",
+      "src": "/assets/neo_pixel_cozy/v1/scenes/azotea_cyberpunk/background_640x360.png",
+      "srcSmall": "/assets/neo_pixel_cozy/v1/scenes/azotea_cyberpunk/background_320x180.png"
+    },
+    {
+      "id": "bosque_bruja",
+      "name": "Bosque de bruja",
+      "src": "/assets/neo_pixel_cozy/v1/scenes/bosque_bruja/background_640x360.png",
+      "srcSmall": "/assets/neo_pixel_cozy/v1/scenes/bosque_bruja/background_320x180.png"
+    },
+    {
+      "id": "planeta_alien",
+      "name": "Planeta alien",
+      "src": "/assets/neo_pixel_cozy/v1/scenes/planeta_alien/background_640x360.png",
+      "srcSmall": "/assets/neo_pixel_cozy/v1/scenes/planeta_alien/background_320x180.png"
+    },
+    {
+      "id": "ruinas_demoniacas",
+      "name": "Ruinas",
+      "src": "/assets/neo_pixel_cozy/v1/scenes/ruinas_demoniacas/background_640x360.png",
+      "srcSmall": "/assets/neo_pixel_cozy/v1/scenes/ruinas_demoniacas/background_320x180.png"
+    },
+    {
+      "id": "jardin_soleado",
+      "name": "Jardín soleado",
+      "src": "/assets/neo_pixel_cozy/v1/scenes/jardin_soleado/background_640x360.png",
+      "srcSmall": "/assets/neo_pixel_cozy/v1/scenes/jardin_soleado/background_320x180.png"
+    },
+    {
+      "id": "habitacion_submarina",
+      "name": "Cuarto submarino",
+      "src": "/assets/neo_pixel_cozy/v1/scenes/habitacion_submarina/background_640x360.png",
+      "srcSmall": "/assets/neo_pixel_cozy/v1/scenes/habitacion_submarina/background_320x180.png"
+    },
+    {
+      "id": "observatorio_estelar",
+      "name": "Observatorio",
+      "src": "/assets/neo_pixel_cozy/v1/scenes/observatorio_estelar/background_640x360.png",
+      "srcSmall": "/assets/neo_pixel_cozy/v1/scenes/observatorio_estelar/background_320x180.png"
+    }
+  ],
+  "presets": {
+    "lumo": {
+      "id": "lumo",
+      "name": "Lumo",
+      "rig": "humanoid_standard",
+      "body": "body_lumo",
+      "expression": "alegre",
+      "hair": "hair_brown_bun",
+      "upper": "top_hoodie_green",
+      "lower": "shorts_green",
+      "shoes": "shoes_brown",
+      "pet": "pet_hedgehog",
+      "scene": "jardin_soleado",
+      "note": "Jardinero. Miga (capibara) no está en el pack; el erizo es un sustituto."
+    },
+    "mora": {
+      "id": "mora",
+      "name": "Mora",
+      "rig": "humanoid_wide",
+      "body": "body_mora",
+      "expression": "calma",
+      "hair": "hair_white",
+      "headwear": "hat_moon",
+      "upper": "top_cream",
+      "lower": "skirt_purple",
+      "shoes": "shoes_purple",
+      "backpack": "cape_moon",
+      "hand": "prop_book",
+      "pet": "pet_owl",
+      "scene": "bosque_bruja",
+      "note": "Bruja. Tinta (cuervo) no está; el búho ocupa el slot de mascota."
+    },
+    "brasa": {
+      "id": "brasa",
+      "name": "Brasa",
+      "rig": "humanoid_wide",
+      "body": "body_brasa",
+      "expression": "alegre",
+      "hair": "hair_brasa",
+      "horns": "horns_curl",
+      "upper": "top_fire",
+      "lower": "shorts_rose",
+      "shoes": "shoes_red",
+      "pet": "pet_dragon",
+      "scene": "azotea_cyberpunk",
+      "note": "Demonio. Chispa (salamandra) no está; se usa un dragón pequeño."
+    },
+    "vek": {
+      "id": "vek",
+      "name": "Vek",
+      "rig": "humanoid_tall",
+      "body": "body_vek",
+      "expression": "alegre",
+      "hair": "hair_teal",
+      "horns": "antenna_lila",
+      "upper": "top_hoodie_blue",
+      "lower": "pants_cargo",
+      "shoes": "shoes_mint",
+      "pet": "pet_frog",
+      "scene": "planeta_alien",
+      "note": "Alien. Glu (babosa estelar) no está; la rana es el sustituto."
+    },
+    "nix": {
+      "id": "nix",
+      "name": "Nix",
+      "rig": "humanoid_seated",
+      "body": "body_nix",
+      "expression": "calma",
+      "hair": "hair_blonde",
+      "upper": "top_hoodie_green",
+      "lower": "pants_cargo",
+      "shoes": null,
+      "pet": "pet_robot",
+      "scene": "habitacion_cozy",
+      "note": "Cyborg sentado. No había silla, guantes ni plaza solar; la silla está dibujada y Bip es el robot."
+    }
+  },
+  "gaps": [
+    "Ningún recorte llega en 96×128 con el mismo origen. Las capas se escalan con vecino más cercano y se colocan con anclas por rig.",
+    "Casi todos los PNG traen alpha parcial (antialiasing). Se recorta el alpha por debajo de 128 para evitar halos.",
+    "La vista del pack es frontal, no el 3/4 hacia la izquierda que pide el canon.",
+    "No hay cuerpo demonio, cuerpo de tez muy oscura, silla de ruedas, bufanda, guantes, tatuaje ni piercing utilizables como capa.",
+    "No están las mascotas canónicas Chispa, Glu, Tinta, Bip ni Miga. Hay sustitutos etiquetados en cada preset.",
+    "No hay escenario de plaza solar ni de invernadero orbital. Azotea, planeta, bosque y jardín son los fondos completos más cercanos.",
+    "Los ojos sueltos del pack son un solo ojo grande, no un par alineado al rig, así que las expresiones se dibujan en píxeles sobre el ancla de la cara.",
+    "Los fondos de 640×360 se conservan y además se exporta una versión 320×180 por vecino más cercano."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Perk",
+  "type": "object",
+  "properties": {
+    "perk_id": {
+      "type": "string",
+      "description": "ID \u00fanico del perk"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nombre del perk"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del efecto"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji o icono"
+    },
+    "effect_type": {
+      "type": "string",
+      "enum": [
+        "coin_boost",
+        "xp_boost",
+        "streak_save",
+        "double_reward",
+        "lucky_drop",
+        "daily_bonus"
+      ],
+      "description": "Tipo de efecto"
+    },
+    "effect_value": {
+      "type": "number",
+      "description": "Valor del efecto (ej: 0.10 para 10%)"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "default": 0,
+      "description": "Duraci\u00f3n en minutos (0 = pasivo permanente)"
+    },
+    "unlock_level": {
+      "type": "number",
+      "default": 1,
+      "description": "Nivel requerido para desbloquear"
+    },
+    "is_passive": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si es un perk pasivo (siempre activo)"
+    },
+    "cooldown_hours": {
+      "type": "number",
+      "default": 24,
+      "description": "Horas de enfriamiento entre usos"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "progression",
+        "rewards",
+        "protection",
+        "social"
+      ],
+      "description": "Categor\u00eda del perk"
+    }
+  },
+  "required": [
+    "perk_id",
+    "name",
+    "description",
+    "icon",
+    "effect_type",
+    "effect_value",
+    "unlock_level"
+  ]
+}

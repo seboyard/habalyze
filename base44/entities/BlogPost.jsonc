@@ -1,0 +1,84 @@
+{
+  "name": "BlogPost",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo del art\u00edculo"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL amigable del art\u00edculo"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Resumen corto del art\u00edculo"
+    },
+    "content": {
+      "type": "string",
+      "description": "Contenido completo en markdown"
+    },
+    "featured_image": {
+      "type": "string",
+      "description": "URL de la imagen principal"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "productividad",
+        "habitos",
+        "motivacion",
+        "salud",
+        "tecnologia"
+      ],
+      "description": "Categor\u00eda del art\u00edculo"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Etiquetas del art\u00edculo"
+    },
+    "read_time": {
+      "type": "number",
+      "description": "Tiempo estimado de lectura en minutos"
+    },
+    "views_count": {
+      "type": "number",
+      "default": 0,
+      "description": "N\u00famero de vistas"
+    },
+    "is_published": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si est\u00e1 publicado"
+    },
+    "published_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha de publicaci\u00f3n"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Nombre del autor"
+    },
+    "meta_description": {
+      "type": "string",
+      "description": "Meta descripci\u00f3n para SEO"
+    },
+    "meta_keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Palabras clave para SEO"
+    }
+  },
+  "required": [
+    "title",
+    "slug",
+    "content",
+    "category"
+  ]
+}

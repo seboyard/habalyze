@@ -1,0 +1,47 @@
+{
+  "name": "GuildMember",
+  "type": "object",
+  "properties": {
+    "guild_id": {
+      "type": "string",
+      "description": "ID del gremio"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email del miembro"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Nombre del miembro"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "leader",
+        "officer",
+        "member"
+      ],
+      "default": "member",
+      "description": "Rol en el gremio"
+    },
+    "contribution_xp": {
+      "type": "number",
+      "default": 0,
+      "description": "XP contribuido al gremio"
+    },
+    "weekly_contribution": {
+      "type": "number",
+      "default": 0,
+      "description": "Contribuci\u00f3n esta semana"
+    },
+    "joined_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de ingreso"
+    }
+  },
+  "required": [
+    "guild_id",
+    "user_email"
+  ]
+}

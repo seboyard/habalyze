@@ -1,0 +1,55 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario destinatario"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "habit_reminder",
+        "challenge_new",
+        "challenge_joined",
+        "achievement_unlocked",
+        "reward_claimed",
+        "friend_activity",
+        "streak_milestone",
+        "level_up"
+      ],
+      "description": "Tipo de notificaci\u00f3n"
+    },
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo de la notificaci\u00f3n"
+    },
+    "message": {
+      "type": "string",
+      "description": "Mensaje de la notificaci\u00f3n"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji o icono"
+    },
+    "link": {
+      "type": "string",
+      "description": "URL de destino al hacer clic"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si la notificaci\u00f3n fue le\u00edda"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Datos adicionales (IDs, etc.)"
+    }
+  },
+  "required": [
+    "user_email",
+    "type",
+    "title",
+    "message"
+  ]
+}

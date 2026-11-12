@@ -1,0 +1,49 @@
+{
+  "name": "GuildPost",
+  "type": "object",
+  "properties": {
+    "guild_id": {
+      "type": "string",
+      "description": "ID del gremio"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email del autor"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Nombre del autor"
+    },
+    "content": {
+      "type": "string",
+      "description": "Contenido del post"
+    },
+    "post_type": {
+      "type": "string",
+      "enum": [
+        "achievement",
+        "question",
+        "tip",
+        "motivation",
+        "celebration"
+      ],
+      "default": "motivation",
+      "description": "Tipo de publicaci\u00f3n"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0,
+      "description": "Cantidad de likes"
+    },
+    "comments_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Cantidad de comentarios"
+    }
+  },
+  "required": [
+    "guild_id",
+    "author_email",
+    "content"
+  ]
+}

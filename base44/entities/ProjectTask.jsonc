@@ -1,0 +1,125 @@
+{
+  "name": "ProjectTask",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "description": "ID del proyecto al que pertenece la tarea"
+    },
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo de la tarea"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n detallada de la tarea"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "completed",
+        "skipped",
+        "locked"
+      ],
+      "default": "pending",
+      "description": "Estado de la tarea"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha l\u00edmite para completar la tarea"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium",
+      "description": "Prioridad de la tarea"
+    },
+    "assigned_to": {
+      "type": "string",
+      "description": "Email del usuario asignado"
+    },
+    "assigned_to_name": {
+      "type": "string",
+      "description": "Nombre del usuario asignado"
+    },
+    "order": {
+      "type": "number",
+      "description": "Orden para visualizar las tareas"
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "IDs de tareas de las que depende esta tarea (orden secuencial)"
+    },
+    "reward_coins": {
+      "type": "number",
+      "default": 10,
+      "description": "Monedas de recompensa al completar"
+    },
+    "reward_xp": {
+      "type": "number",
+      "default": 20,
+      "description": "XP de recompensa al completar"
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de completado"
+    },
+    "is_milestone": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si la tarea es un hito importante"
+    },
+    "is_setup": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si la tarea es de configuraci\u00f3n inicial"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "one-time",
+        "recurring"
+      ],
+      "default": "one-time",
+      "description": "Tipo de tarea: \u00fanica o recurrente"
+    },
+    "recurrence_pattern": {
+      "type": "string",
+      "description": "Patr\u00f3n de recurrencia (ej: daily, weekly, monthly)"
+    },
+    "linked_habit_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs de h\u00e1bitos vinculados a esta tarea"
+    },
+    "assigned_week_number": {
+      "type": "number",
+      "description": "N\u00famero de semana del proyecto a la que pertenece esta tarea"
+    },
+    "phase": {
+      "type": "string",
+      "description": "Fase del proyecto a la que pertenece"
+    },
+    "tips": {
+      "type": "string",
+      "description": "Consejos para completar la tarea"
+    }
+  },
+  "required": [
+    "project_id",
+    "title"
+  ]
+}
