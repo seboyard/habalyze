@@ -1,19 +1,14 @@
-import { canUseSupabase, createSupabaseAdapter } from './adapters/supabaseAdapter';
+import { canUseSupabase, createSupabaseDb } from './adapters/supabaseAdapter';
 import { createLocalDb } from './local/createLocalDb';
 
 function createDb() {
   const requested = import.meta.env.VITE_DATA_ADAPTER || 'local';
   if (requested === 'supabase') {
     if (!canUseSupabase()) {
-      console.info('[Habalyze] VITE_DATA_ADAPTER=supabase sin claves. Se usa el adaptador local.');
+      console.info('[Habalyze] VITE_DATA_ADAPTER=supabase sin URL o clave anónima. Se usa el adaptador local.');
       return createLocalDb();
     }
-    try {
-      return createSupabaseAdapter();
-    } catch (error) {
-      console.info('[Habalyze]', error.message);
-      return createLocalDb();
-    }
+    return createSupabaseDb();
   }
   return createLocalDb();
 }
