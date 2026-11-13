@@ -192,7 +192,7 @@ export default function PremiumPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-900 via-purple-900 to-fuchsia-900 p-4 md:p-8">
+    <div className="min-h-screen bg-[#2B1741] text-[#FFF4DD] p-4 md:p-8">
       <div className="max-w-5xl mx-auto">
         <Button
           variant="ghost"
@@ -215,8 +215,8 @@ export default function PremiumPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Habalyze Premium
           </h1>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto">
-            Desbloquea todo el potencial de tu Coach IA y lleva tus hábitos al siguiente nivel
+          <p className="text-xl text-[#BA92EB] max-w-2xl mx-auto">
+            El premium añade coach y cosméticos. Los hábitos de siempre siguen gratis, y PayPal todavía no cobra.
           </p>
         </div>
 

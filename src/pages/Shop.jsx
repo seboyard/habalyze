@@ -533,7 +533,7 @@ export default function ShopPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-pink-50 pb-24">
+    <div className="min-h-screen pb-24">
       <ShopHeader 
         user={user} 
         wishlistCount={wishlist.length}

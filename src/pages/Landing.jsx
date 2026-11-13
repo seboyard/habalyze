@@ -358,7 +358,7 @@ export default function Landing() {
                 Construye los hábitos que construyen tu vida.
               </p>
               <p className="text-lg sm:text-xl text-gray-600 mb-8">
-                {t('landing.hero.subtitle', 'Gamifica tu vida con IA, estadísticas avanzadas y una comunidad increíble')}
+                {t('landing.hero.subtitle', 'Hábitos, metas y caminos con un avatar Neo Pixel Cozy. Brasa, Vek, Mora, Nix y Lumo ya están en el vestidor.')}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button 
@@ -403,14 +403,19 @@ export default function Landing() {
                   ))}
                 </div>
                 
-                <div className="flex items-center justify-center gap-6 relative z-10">
-                  <motion.div
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <NeoPixelAvatar user={{ avatar_config: { preset: 'mora' }, level: 4 }} size={150} showLevel={false} framed />
-                  </motion.div>
-                  <div className="space-y-3">
+                <div className="flex flex-col items-center gap-4 relative z-10">
+                  <div className="flex flex-wrap items-end justify-center gap-1">
+                    {['brasa', 'vek', 'mora', 'nix', 'lumo'].map((preset) => (
+                      <NeoPixelAvatar
+                        key={preset}
+                        user={{ avatar_config: { preset }, level: 1 }}
+                        size={84}
+                        showLevel={false}
+                        animation="idle"
+                      />
+                    ))}
+                  </div>
+                  <div className="space-y-3 w-full max-w-xs">
                     <motion.div 
                       className="bg-white rounded-xl p-3 shadow-lg border-2 border-orange-200"
                       whileHover={{ scale: 1.05 }}

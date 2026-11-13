@@ -1,0 +1,16 @@
+---
+description: Guardrails de Habalyze para cualquier agente que toque este repo
+alwaysApply: true
+---
+
+# Habalyze
+
+- La interfaz de la app va en español.
+- El estilo visual es Neo Pixel Cozy: paleta ciruela, lila, crema, menta y dorado. Los PNG de avatar son nativos 96×128, alpha 0 o 255, sin antialias. Escalar solo con vecino más cercano. No reutilizar recortes viejos como si fueran canon.
+- `avatar_config.engine = "legacy"` sigue mostrando el avatar dibujado anterior. No lo borres.
+- No pongas secretos, claves ni valores de `.env` en el repo, en commits, en logs ni en la descripción del PR. Los placeholders viven en `.env.example`.
+- Toda tabla expuesta lleva RLS. Las funciones privilegiadas van en el esquema `private`. Los roles van en `user_roles`, nunca en `user_metadata`.
+- Las vistas tienen que ser `security_invoker`. No dejes que el cliente acuñe monedas: si no puedes cerrarlo sin romper la app, documenta el paso y no dejes una política a medias.
+- Escribe SQL nuevo con `supabase migration new`. No lo apliques al proyecto de producción. No vuelvas a ejecutar `supabase/schema.sql` encima de la base viva. No borres tablas ni datos.
+- Una rama y un PR por dominio (avatar, datos, tienda, social, auth/UI, migraciones). Parte de `main`. No despliegues producción ni hagas merge salvo que Seb lo pida.
+- `npm run build` tiene que pasar antes de abrir el PR.

@@ -172,6 +172,13 @@ button:focus-visible {
   color: #2B1741;
 }
 
+/* Las páginas traían un degradado lila genérico. El fondo cozy lo pinta el body. */
+.habalyze-shell .min-h-screen.bg-gradient-to-br,
+.habalyze-shell .min-h-screen.bg-gradient-to-b {
+  background-image: none;
+  background-color: transparent;
+}
+
 .npc-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
 .npc-stage { position: relative; }
 .npc-framed {
@@ -224,6 +231,13 @@ button:focus-visible {
   border-radius: 24px;
   box-shadow: 8px 8px 0 #BA92EB;
   padding: 1.5rem;
+}
+.login-cast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem;
+  margin-bottom: 0.6rem;
 }
 .login-card h1 { font-size: 2rem; font-weight: 900; margin: 0.2rem 0 0.6rem; }
 .login-copy { color: #555267; margin-bottom: 1rem; }

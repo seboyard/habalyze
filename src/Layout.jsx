@@ -119,7 +119,7 @@ export default function Layout({ children, currentPageName }) {
 
           {/* ── Mobile bottom navigation ── */}
           <nav
-            className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-gray-200 lg:hidden z-40 shadow-xl"
+            className="fixed bottom-0 left-0 right-0 bg-[#FFF4DD]/95 backdrop-blur-lg border-t-2 border-[#2B1741] lg:hidden z-40"
             style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
           >
             <div className="flex items-center justify-around h-16 px-1">
@@ -140,12 +140,12 @@ export default function Layout({ children, currentPageName }) {
                     }}
                     className={cn(
                       'flex flex-col items-center justify-center flex-1 h-full gap-0.5 min-h-[44px] transition-colors',
-                      isActive ? 'text-purple-600' : 'text-gray-400'
+                      isActive ? 'text-[#693CA1]' : 'text-[#555267]'
                     )}
                   >
                     <div className={cn(
                       'p-1.5 rounded-xl transition-all',
-                      isActive && 'bg-gradient-to-br from-purple-500 to-pink-500 shadow-md'
+                      isActive && 'bg-[#693CA1] shadow-[2px_2px_0_#2B1741]'
                     )}>
                       <Icon className={cn('w-5 h-5', isActive && 'text-white')} />
                     </div>
@@ -168,8 +168,8 @@ export default function Layout({ children, currentPageName }) {
                 <div className={cn(
                   'w-14 h-14 rounded-full flex items-center justify-center shadow-2xl border-4 border-white',
                   location.pathname === coachItem.url
-                    ? 'bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600'
-                    : 'bg-gradient-to-br from-purple-400 to-pink-400'
+                    ? 'bg-[#693CA1]'
+                    : 'bg-[#2B1741]'
                 )}>
                   <Brain className="w-7 h-7 text-white drop-shadow" />
                 </div>
@@ -193,12 +193,12 @@ export default function Layout({ children, currentPageName }) {
                     }}
                     className={cn(
                       'flex flex-col items-center justify-center flex-1 h-full gap-0.5 min-h-[44px] transition-colors',
-                      isActive ? 'text-purple-600' : 'text-gray-400'
+                      isActive ? 'text-[#693CA1]' : 'text-[#555267]'
                     )}
                   >
                     <div className={cn(
                       'p-1.5 rounded-xl transition-all relative',
-                      isActive && 'bg-gradient-to-br from-purple-500 to-pink-500 shadow-md'
+                      isActive && 'bg-[#693CA1] shadow-[2px_2px_0_#2B1741]'
                     )}>
                       <Icon className={cn('w-5 h-5', isActive && 'text-white')} />
                       {showBadge && (
@@ -216,17 +216,17 @@ export default function Layout({ children, currentPageName }) {
           </nav>
 
           {/* ── Desktop top navigation ── */}
-          <nav className="hidden lg:flex fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-gray-200 z-50 shadow-sm items-center h-[72px]">
+          <nav className="hidden lg:flex fixed top-0 left-0 right-0 bg-[#FFF4DD]/95 backdrop-blur-xl border-b-2 border-[#2B1741] z-50 items-center h-[72px]">
             <div className="max-w-7xl mx-auto w-full px-6 flex items-center justify-between">
 
               <Link to={createPageUrl('Landing')}>
                 <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.02 }}>
                   <HabalyzeLogo />
                   <div>
-                    <span className="text-xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
+                    <span className="text-xl font-black text-[#2B1741]" style={{ fontFamily: 'Silkscreen, Nunito, sans-serif' }}>
                       Habalyze
                     </span>
-                    <p className="text-xs text-gray-400 -mt-0.5">Analiza. Mejora. Conquista.</p>
+                    <p className="text-xs text-[#693CA1] -mt-0.5">Neo Pixel Cozy</p>
                   </div>
                 </motion.div>
               </Link>
@@ -241,7 +241,7 @@ export default function Layout({ children, currentPageName }) {
                       {isActive && (
                         <motion.div
                           layoutId="activeDesktopTab"
-                          className="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl -z-10"
+                          className="absolute inset-0 bg-[#BA92EB]/40 rounded-xl -z-10"
                           initial={false}
                           transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                         />
@@ -272,8 +272,8 @@ export default function Layout({ children, currentPageName }) {
                     className={cn(
                       'flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all font-semibold',
                       location.pathname === coachItem.url
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                        : 'text-gray-600 hover:bg-purple-50 hover:text-purple-700'
+                        ? 'bg-[#693CA1] text-[#FFF4DD] shadow-[3px_3px_0_#2B1741]'
+                        : 'text-[#2B1741] hover:bg-[#BA92EB]/30'
                     )}
                     whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.97 }}
